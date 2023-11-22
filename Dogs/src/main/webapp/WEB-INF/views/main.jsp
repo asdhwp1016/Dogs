@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Welcome Puppy</title>
+<link rel="stylesheet" href="resources/css/main.css?after">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
@@ -18,7 +19,7 @@
 <body>
 
 <div class="mainwrapper">
-	<div class="wrap">
+	<div class="mainwrap">
 		
 	
 	
