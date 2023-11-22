@@ -18,13 +18,9 @@
 </head>
 <body>
 
-<div class="mainwrapper">
-	<div class="mainwrap">
-		
-	
-	
-	</div>
-</div>
+<%@include file="./includes/user/header.jsp"%>
+
+asd
 
 </body>
 </html>

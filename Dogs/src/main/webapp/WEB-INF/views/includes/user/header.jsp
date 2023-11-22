@@ -5,6 +5,8 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<link rel="stylesheet" href="resources/css/user/header.css?after">
+
 </head>
 <body>
 
@@ -24,6 +26,49 @@
 				</li>
 				<li>
 					<a href="#">회원가입</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="header_menu">
+			<ul class="menuList">
+				<li>
+					<a href="#">PUPPY</a>
+					<div class="subMenu">
+						<ul>
+                            <li><a href="#">소개</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">오시는 길</a></li>
+                        </ul>
+					</div>
+				</li>
+				<li>
+					<a href="#">신규분양</a>
+					<div class="subMenu">
+						<ul>
+                            <li><a href="#">강아지분양</a></li>
+                            <li><a href="#">영상보기</a></li>
+                        </ul>
+					</div>
+				</li>
+				<li>
+					<a href="#">강아지 코디</a>
+					<div class="subMenu">
+						<ul>
+                            <li><a href="#">후드</a></li>
+                            <li><a href="#">조끼</a></li>
+                            <li><a href="#">일반</a></li>
+                        </ul>
+					</div>
+				</li>
+				<li>
+					<a href="#">방문예약</a>
+				</li>
+				<li>
+					<a href="#">분양후기</a>
+				</li>
+				<li>
+					<a href="#">커뮤니티</a>
 				</li>
 			</ul>
 		</div>
