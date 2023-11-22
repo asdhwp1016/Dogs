@@ -9,22 +9,24 @@
 <body>
 
 <div class="headerwrapper">
-	<div class="top_area">
-		<!-- 로고 영역 -->
-		<div class="logo_area">
-			<a href="#"><img src="resources/img/mLogo.png"></a>
+	<div class="header">
+		<div class="top_area">
+			<!-- 로고 영역 -->
+			<div class="logo_area">
+				<a href="#"><img src="resources/img/mLogo.png"></a>
+			</div>
 		</div>
-	</div>
-	
-	<div class="top_gnb_area">
-		<ul class="userList">
-			<li>
-				<a href="#">로그인</a>
-			</li>
-			<li>
-				<a href="#">회원가입</a>
-			</li>
-		</ul>
+		
+		<div class="top_gnb_area">
+			<ul class="userList">
+				<li>
+					<a href="#">로그인</a>
+				</li>
+				<li>
+					<a href="#">회원가입</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
 

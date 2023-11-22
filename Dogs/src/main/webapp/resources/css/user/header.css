@@ -1,1 +1,21 @@
-@charset "EUC-KR";
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding:0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* 화면 전체 렙 */
+.headerwrapper{
+	width: 100%;
+}
+
+/*헤더 전체 렙*/
+.wrap{
+	width : 1080px;
+	margin: auto;
+}
