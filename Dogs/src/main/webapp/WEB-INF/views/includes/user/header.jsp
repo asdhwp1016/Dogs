@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/css/user/header.css?after">
 
@@ -46,7 +46,7 @@
 					<a href="#">신규분양</a>
 					<div class="subMenu">
 						<ul>
-                            <li><a href="#">강아지분양</a></li>
+                            <li><a href="#">강아지 분양</a></li>
                             <li><a href="#">영상보기</a></li>
                         </ul>
 					</div>
@@ -55,9 +55,9 @@
 					<a href="#">강아지 코디</a>
 					<div class="subMenu">
 						<ul>
-                            <li><a href="#">후드</a></li>
-                            <li><a href="#">조끼</a></li>
-                            <li><a href="#">일반</a></li>
+                            <li><a href="#">후드 코디</a></li>
+                            <li><a href="#">조끼 코디</a></li>
+                            <li><a href="#">일반 코디</a></li>
                         </ul>
 					</div>
 				</li>

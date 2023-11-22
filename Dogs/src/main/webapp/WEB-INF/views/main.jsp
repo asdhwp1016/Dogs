@@ -20,7 +20,11 @@
 
 <%@include file="./includes/user/header.jsp"%>
 
-asd
+<div class="mainwapper">
+	<div class="adbanner">
+		<img src="resources/img/adbanner1.png">
+	</div>
+</div>
 
 </body>
 </html>

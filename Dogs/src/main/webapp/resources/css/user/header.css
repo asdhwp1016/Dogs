@@ -2,24 +2,27 @@
 
 /* Screen total level */
 .headerwrapper {
+	position: fixed; /* 항상 화면 상단에 고정 */
+    top: 0;
+    left: 0;
 	padding : 0;
 	margin : 0;
     width: 100%;
+    z-index: 1000; /* 헤더를 다른 요소보다 위에 표시하기 위한 우선순위 설정 */
 }
 
 /* Header total level */
 .header {
     width: 1600px;
-    height: 150px;
+    height: 140px;
     margin: auto;
     position: relative; 
-    background-color: gray;
 }
 
 /* Logo Area */
 .logo_area {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 0;
     transform: translateY(-50%);
 }
@@ -40,7 +43,7 @@
     margin-left: 20px;
 }
 
-.userList a {
+.userList li a {
 	color : black;
 	text-decoration: none;
 	font-weight : bold;
@@ -50,7 +53,7 @@
 /* Header Menu */
 .header_menu {
     position: absolute;
-    top: 50%;
+    top: 55%;
     right: 0;
     transform: translateY(-50%);
 }
@@ -69,57 +72,60 @@
 
 .menuList li:hover .subMenu {
     display: block;
+    position: absolute;
+    left: 50%; /* 부모 요소에 대한 가로 중앙 정렬 */
+    transform: translateX(-50%); /* 가로 중앙 정렬을 위한 변형 */
     text-align: left; /* 왼쪽 정렬 */
 }
 
 .menuList li a {
 	color : black;
 	text-decoration: none;
-	font-size : 1.4em;
-	font-weight : 500;
+	font-size : 1.3em;
+	font-weight : 600;
 }
 
 .menuList li a:hover {
-	text-decoration: underline;
+	color : pink;
 }
 
-/* 수정된 부분 */
 .subMenu {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
     background-color: white; /* 배경 색상 지정 */
-    border: 1px solid black; /* 테두리 선 지정 */
-    padding: 10px; /* 안쪽 여백 지정 */
-    width: max-content; /* 최대 내용 크기만큼 넓힘 */
+    border: 1px thin black; /* 테두리 선 지정 */
+    padding: 12px; /* 안쪽 여백 지정 */
+    width: 120px; /* 최대 내용 크기만큼 넓힘 */
+    white-space: nowrap; /* 텍스트가 한 줄로만 표시되도록 설정 */
 }
 
-/* 수정된 부분 */
 .subMenu ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: center; /* 가운데 정렬 */
 }
 
-/* 수정된 부분 */
-.subMenu a {
+.subMenu li {
     display: block;
+    margin: 5px 0; /* 각 항목 사이 여백 조정 */
+    border-bottom: 1px solid lightgray; /* 각 메뉴들마다 구분선 추가 */
+}
+
+.subMenu li a {
     color: black; /* 텍스트 색상 지정 */
-    text-decoration: none;
+    font-size: 1.0em; /* 글자 크기 조정 */
+    display: block;
     padding: 5px 0; /* 여백 조정 */
-    font-size: 0.8em; /* 글자 크기 조정 */
+    text-decoration: none;
 }
 
-/* 수정된 부분 */
-.subMenu a:hover {
+.subMenu li a:hover {
     background-color: #f0f0f0; /* 마우스 오버시 배경 색상 변경 */
+    text-decoration: none;	
 }
 
-/* 수정된 부분 */
-.subMenu a:not(:last-child) {
-    border-bottom: 1px solid black; /* 각 메뉴들마다 구분선 추가 */
-}
 
 
 
