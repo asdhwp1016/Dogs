@@ -10,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dogs.model.CommunityVO;
+import com.dogs.model.Criteria;
 
 
 
@@ -40,4 +41,42 @@ public class CommunityMapperTest {
 		
 		list.forEach(community -> log.info("" + community));
 	}
-}
+	
+	/* 커뮤니티 글 조회 테스트 */
+	@Test
+	public void testGetPage() {
+		
+		/* 실존하는 페이지 */
+		int bno = 2;
+		
+		log.info("" + comMapper.getPage(bno));
+	}
+	
+	/* 커뮤니티 글 조회 테스트(페이징) */
+	@Test
+	public void testGetPaging() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(3);
+		List list = comMapper.getListPaging(cri);
+		list.forEach(commu -> log.info("" + commu));
+	}
+	
+	/* 커뮤니티 글 수정 테스트 */
+	@Test
+	public void testModify() {
+		CommunityVO cvo = new CommunityVO();
+		cvo.setBno(3);
+		cvo.setTitle("수정수정");
+		cvo.setComContent("수정 내용내용");
+		
+		int result = comMapper.modify(cvo);
+		log.info("result: " + result);
+	}
+	
+	/* 커뮤니티 글 삭제 테스트 */
+	@Test
+	public void testDelete() {
+		int result = comMapper.delete(3);
+		log.info("result: " + result);
+	}
+} 

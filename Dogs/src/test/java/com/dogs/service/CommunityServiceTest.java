@@ -32,4 +32,22 @@ public class CommunityServiceTest {
 	public void testGetList() {
 		comService.getList().forEach(community -> log.info("" + community));
 	}
+	
+	@Test
+	public void testGetPage() {
+		int bno = 3;
+		
+		log.info("" + comService.getPage(bno));
+	}
+	
+	@Test
+	public void testModify() {
+		CommunityVO cvo = new CommunityVO();
+		cvo.setBno(3);
+		cvo.setTitle("수정 서비스");
+		cvo.setComContent("수정 서비스 내용");
+		
+		int result = comService.modify(cvo);
+		log.info("result: " + result);
+	}
 }
