@@ -1,0 +1,14 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.dogs.mapper.AdminMapper">
+
+	<!-- 강쥐 등록 -->
+	<insert id = "dogEnroll">
+	
+		insert into dog(dogId, dogCateCode, dogName, dogPrice, dogPoint, dogContent)
+		values(dog_Id_seq.nextval, #{dogCateCode}, #{dogName}, #{dogPrice}, #{dogPoint}, #{dogContent})
+	
+	</insert>
+
+  </mapper>
