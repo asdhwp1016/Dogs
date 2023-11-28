@@ -82,7 +82,7 @@
 					<div class="subMenu">
 						<ul>
                             <li><a href="#">후드 코디</a></li>
-                            <li><a href="#">조끼 코디</a></li>
+                            <li><a href="#">패딩 코디</a></li>
                             <li><a href="#">일반 코디</a></li>
                         </ul>
 					</div>

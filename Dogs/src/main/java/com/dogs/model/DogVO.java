@@ -27,7 +27,13 @@ public class DogVO {
 	
 	/* 강쥐 수정 날짜 */
 	private Date updateDate;
+	
+	/*강쥐 카테고리 이름*/
+	private String dCateName;
 
+	/*카테고리 테이블의 카테코드*/
+	private String dCateCode;
+	
 	public int getDogId() {
 		return dogId;
 	}
@@ -91,12 +97,29 @@ public class DogVO {
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
 	}
+	
+	public String getdCateName() {
+		return dCateName;
+	}
+
+	public void setdCateName(String dCateName) {
+		this.dCateName = dCateName;
+	}
+	
+	public String getDCateCode() {
+	    return dCateCode;
+	}
+
+	public void setDCateCode(String dCateCode) {
+	    this.dCateCode = dCateCode;
+	}
 
 	@Override
 	public String toString() {
 		return "DogVO [dogId=" + dogId + ", dogCateCode=" + dogCateCode + ", dogName=" + dogName + ", dogPrice="
 				+ dogPrice + ", dogPoint=" + dogPoint + ", dogContent=" + dogContent + ", regDate=" + regDate
-				+ ", updateDate=" + updateDate + "]";
+				+ ", updateDate=" + updateDate + ", dCateName=" + dCateName + ", dCateCode=" + dCateCode + "]";
 	}
+
 	
 }

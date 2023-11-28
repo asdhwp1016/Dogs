@@ -10,5 +10,79 @@
 		values(dog_Id_seq.nextval, #{dogCateCode}, #{dogName}, #{dogPrice}, #{dogPoint}, #{dogContent})
 	
 	</insert>
+	
+	
+	<!-- 강아지 카테고리 리스트 -->
+	<select id="dogCateList" resultType="com.dogs.model.DogCateVO">
+	
+		select * from dogCate
+	
+	</select>
+	
+	
+	<!-- 강아지 상품 리스트 -->
+  	<select id="dogsGetList" resultType="com.dogs.model.DogVO">
+  	
+	  	<![CDATA[
+		select * from(
+		    select /*+INDEX_DESC(dog SYS_C007597)*/ rownum as rn, dogId, dogName,
+		        (select dCateName from dogCate where dog.dogCateCode = dogCate.dCateCode) dCateName, regDate
+		    from dog 
+		    where 
+		]]>    
+		
+		    <if test="keyword != null">
+		    
+			    dogName like '%' || #{keyword} || '%' and
+			    
+		    </if>
+		     
+		<![CDATA[    
+		    rownum <= #{pageNum} * #{amount} 
+		    )
+		where rn > (#{pageNum} -1) * #{amount}		  	
+  		]]>
+  	
+  	</select>
+  	
+  	<!-- 강아지 상품 총 개수 -->
+  	<select id="dogsGetTotal" resultType="int">
+  	
+  		select count(*) from dog
+  		
+  		<if test="keyword != null">
+  		
+  			where dogName like '%' || #{keyword} || '%'
+  		</if>
+  		
+  	</select>
+  	
+  	
+  	<!-- 강아지 상품 조회 페이지 -->
+  	<select id="dogsGetDetail" resultType="com.dogs.model.DogVO">
+	
+		select *
+		from dog where dogId = #{dogId}
+	
+	</select>
+	
+	
+	<!-- 강아지 상품 정보 수정 -->
+	<update id="dogsModify">
+		
+		update dog set dogName = #{dogName}, dogCateCode = #{dogCateCode}, 
+		dogPrice = #{dogPrice}, dogPoint = #{dogPoint}, dogContent = #{dogContent}, updateDate = sysdate
+		where dogId = ${dogId}
+		
+	</update>
+	
+	
+	<!-- 강아지 상품 정보 삭제 -->
+	<delete id="dogsDelete">
+	
+		delete from dog where dogId = #{dogId}
+	
+	</delete>
+	
 
   </mapper>
