@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dogs.mapper.CommunityMapper;
+import com.dogs.model.CommuCateVO;
 import com.dogs.model.CommunityVO;
 import com.dogs.model.Criteria;
 
@@ -48,5 +49,10 @@ public class CommunityServiceImpl implements CommunityService {
 	@Override
 	public int getTotal(Criteria cri) {
 		return comMapper.getTotal(cri);
+	}
+	
+	@Override
+	public List<CommuCateVO> cateList() {
+		return comMapper.cateList();
 	}
 }

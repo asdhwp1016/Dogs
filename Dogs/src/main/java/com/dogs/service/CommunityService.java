@@ -2,6 +2,7 @@ package com.dogs.service;
 
 import java.util.List;
 
+import com.dogs.model.CommuCateVO;
 import com.dogs.model.CommunityVO;
 import com.dogs.model.Criteria;
 
@@ -27,4 +28,7 @@ public interface CommunityService {
 	
 	/* 커뮤니티 총 개수 */
 	public int getTotal(Criteria cri);
+	
+	/* 커뮤니티 카테고리 리스트 */
+	public List<CommuCateVO> cateList();
 }

@@ -1,1 +1,112 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.board_wrap {
+    width: 1440px;
+    margin: 20px auto;
+}
+
+.board_title {
+    margin-bottom: 30px;
+}
+
+.board_title span {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Nanum Gothic', sans-serif;
+    vertical-align: top;
+    padding-top: 15px;
+}
+
+.bt_wrap {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0;
+}
+
+.bt_wrap a {
+    display: inline-block;
+    min-width: 80px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    font-size: 1.4rem;
+}
+
+.bt_wrap a:first-child {
+    margin-left: 0;
+}
+
+.on {
+    background: #000;
+    color: #fff;
+}
+
+.board_write {
+    border-top: 2px solid #000;
+}
+
+.board_write .title,
+.board_write .info {
+    padding: 15px;
+}
+
+.board_write .info {
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px solid #000;
+    font-size: 0;
+}
+
+.board_write .title dl {
+    font-size: 0;
+}
+
+.board_write .info dl {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+}
+
+.cont textarea {
+	padding: 15px;
+    border-bottom: 1px solid #000;
+    line-height: 160%;
+    font-size: 1.4rem;
+    border: none;
+    resize: none;
+    height: 500px;
+    width: 1440px;
+}
+
+.board_write .title dt,
+.board_write .title dd,
+.board_write .info dt,
+.board_write .info dd {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.4rem;
+}
+
+.board_write .title dd input {
+	font-family: 'Nanum Gothic', sans-serif;
+	width: 600px;
+	font-size: 20px;
+	border: 1px solid #ebecef;
+}
+
+.info dl dd input {
+	font-family: 'Nanum Gothic', sans-serif;
+	width: 300px;
+	font-size: 20px;
+	border: 1px solid #ebecef;
+}

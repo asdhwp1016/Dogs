@@ -79,4 +79,10 @@ public class CommunityMapperTest {
 		int result = comMapper.delete(3);
 		log.info("result: " + result);
 	}
+	
+	/* 카테고리 테스트 */
+	@Test
+	public void cateListTest() throws Exception {
+		System.out.println("cateList()........." + comMapper.cateList());
+	}
 } 

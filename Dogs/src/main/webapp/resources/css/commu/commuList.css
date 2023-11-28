@@ -1,29 +1,78 @@
+ @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
 a {
 	text-decoration: none;
 }
 
-table {
+.commTable {
 	border-collapse: collapse;
-	width: 1000px;
 	margin-top: 20px;
 	text-align: center;
 }
 
-td, th {
-	border: 1px solid black;
-	height: 50px;
-}
-
-th {
+.commTable thead tr th {
 	font-size: 17px;
+	border-bottom: 1px solid #d3d3d3;
+	height: 40px;
 }
 
-thead {
+.commTable thead {
 	font-weight: 700;
 }
 
+.commTable tr td {
+	border-bottom: 1px solid #333;
+	height: 40px;
+}
+
+.clear {
+	clear: both;
+}
+
+.wrap {
+	width: 1600px;
+	margin: 0 auto;
+	text-align: center;
+}
+
 .table_wrap {
-	margin: 50px 0 0 50px;
+	width: 90%;
+	margin-left: 5%;
+}
+
+.table_wrap table {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.commTop {
+	display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.commTitle {
+	font-size: 30px;
+	font-weight: 600;
+	font-family: 'Nanum Gothic', sans-serif;
+	vertical-align: top;
+	padding-top: 15px;
+}
+
+.top_btn {
+	display: table-cell;
+	color: #fff !important;
+	text-align: center;
+	border-radius: 2px;
+	border: 1px solid #DA4E71;
+	background-color: #DA4E71;
+	font-size: 20px;
+	font-weight: 600;
+	width:200px;
+	height: 100%;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
 .bno_width {
@@ -42,24 +91,22 @@ thead {
 	width: 15%;
 }
 
-.top_btn {
-	font-size: 20px;
-	padding: 6px 12px;
-	background-color: #fff;
-	border: 1px solid #ddd;
-	font-weight: 600;
+.pageInfo_wrap{
+	text-align: center;
+	margin: 0 auto;
 }
 
 .pageInfo {
 	list-style: none;
 	display: inline-block;
-	margin: 50px 0 0 100px;
+	padding-right:40px;
 }
 
 .pageInfo li {
 	float: left;
 	font-size: 20px;
-	margin-left: 18px;
+	margin-left: 9px;
+	margin-right: 9px;
 	padding: 7px;
 	font-weight: 500;
 }
@@ -83,10 +130,12 @@ a:hover {
 	background-color: #cdd5ec;
 }
 
+.search_wrap {
+	margin-top: 50px;
+}
+
 .search_area {
-	display: inline-block;
-	margin-top: 30px;
-	margin-left: 260px;
+	
 }
 
 .search_area input {

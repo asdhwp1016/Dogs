@@ -7,8 +7,8 @@
 
   <!-- 커뮤니티 글 등록 -->
   <insert id="enroll">
-  	insert into dogCommu(bno, title, comcontent, writer)
-  	values (bno_seq.nextval, #{title}, #{comContent}, #{writer})
+  	insert into dogCommu(bno, title, comContent, writer, comCateCode)
+  	values (bno_seq.nextval, #{title}, #{comContent}, #{writer}, #{comCateCode})
   </insert>
   
   <!-- 커뮤니티 글 목록 -->
@@ -26,7 +26,7 @@
                           title like '%'||#{keyword}||'%' 
                       </when>
                       <when test="type == 'C'.toString()">
-                          content like '%'||#{keyword}||'%' 
+                          comcontent like '%'||#{keyword}||'%' 
                       </when>
                       <when test="type == 'W'.toString()">
                           writer like '%'||#{keyword}||'%' 
@@ -76,6 +76,11 @@
   	<if test="keyword != null">
     	where bno > 0 <include refid="criteria"></include>
     </if>
+  </select>
+  
+  <!-- 카테고리 리스트 -->
+  <select id="cateList" resultType="com.dogs.model.CommuCateVO">
+  	select * from commuCate order by comCateCode
   </select>
   
 </mapper>

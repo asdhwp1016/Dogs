@@ -7,14 +7,38 @@
 
   <!-- 커뮤니티 글 등록 -->
   <insert id="enroll">
-  	insert into dogCommu(bno, title, comcontent, writer)
-  	values (bno_seq.nextval, #{title}, #{comContent}, #{writer})
+  	insert into dogCommu(bno, title, comContent, writer, comCateCode)
+  	values (bno_seq.nextval, #{title}, #{comContent}, #{writer}, #{comCateCode})
   </insert>
   
   <!-- 커뮤니티 글 목록 -->
   <select id="getList" resultType="com.dogs.model.CommunityVO">
   	select * from dogCommu
   </select>
+  
+  <!-- 검색 조건문 -->
+  <sql id="criteria">
+      <trim prefix="AND (" suffix=")" prefixOverrides="OR">
+          <foreach collection="typeArr" item="type">
+              <trim prefix="OR">
+                  <choose>
+                      <when test="type == 'T'.toString()">
+                          title like '%'||#{keyword}||'%' 
+                      </when>
+                      <when test="type == 'C'.toString()">
+                          comcontent like '%'||#{keyword}||'%' 
+                      </when>
+                      <when test="type == 'W'.toString()">
+                          writer like '%'||#{keyword}||'%' 
+                      </when>
+                      <when test="type == 'G'.toString()">
+                      	  comcatename like '%'||#{keyword}||'%'
+                      </when>
+                  </choose>
+              </trim>
+          </foreach>
+      </trim>
+  </sql>
   
   <!-- 커뮤니티 글 목록(페이징) -->
 	<select id="getListPaging" resultType="com.dogs.model.CommunityVO">
@@ -24,8 +48,8 @@
 	      from dogCommu where rownum <= #{pageNum}*#{amount}
 	  ]]>
 	  	<if test="keyword != null">
-	  		and title like '%'||#{keyword}||'%'
-	  	</if>
+        	<include refid="criteria"></include> 
+        </if>
 	  
 	  <![CDATA[
 	  		)
@@ -53,8 +77,13 @@
   	select count(*) from dogCommu
   	
   	<if test="keyword != null">
-	 	where title like '%'||#{keyword}||'%'
-	</if>
+    	where bno > 0 <include refid="criteria"></include>
+    </if>
+  </select>
+  
+  <!-- 카테고리 리스트 -->
+  <select id="cateList" resultType="com.dogs.model.CommuCateVO">
+  	select * from commuCate order by comCateCode
   </select>
   
 </mapper>
