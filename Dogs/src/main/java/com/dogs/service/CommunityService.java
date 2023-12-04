@@ -31,4 +31,5 @@ public interface CommunityService {
 	
 	/* 커뮤니티 카테고리 리스트 */
 	public List<CommuCateVO> cateList();
+	
 }

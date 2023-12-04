@@ -7,13 +7,18 @@
 
   <!-- 커뮤니티 글 등록 -->
   <insert id="enroll">
+  
+  <selectKey resultType="int" keyProperty="bno" order="AFTER">
+  	select max(bno) from dogCommu
+  </selectKey>
+  		
   	insert into dogCommu(bno, title, comContent, writer, comCateCode)
   	values (bno_seq.nextval, #{title}, #{comContent}, #{writer}, #{comCateCode})
   </insert>
   
   <!-- 커뮤니티 글 목록 -->
   <select id="getList" resultType="com.dogs.model.CommunityVO">
-  	select * from dogCommu
+  	select * from dogCommu 
   </select>
   
   <!-- 검색 조건문 -->
@@ -38,22 +43,30 @@
   </sql>
   
   <!-- 커뮤니티 글 목록(페이징) -->
-	<select id="getListPaging" resultType="com.dogs.model.CommunityVO">
-	  <![CDATA[
-	    select bno, title, writer, comcontent, comcatecode, regdate, updatedate from (
-	      select /*+INDEC_DESC(dogCommu pk_commu) */ rownum as rn, bno, title, writer, comcontent, comcatecode, regdate, updatedate
-	      from dogCommu where rownum <= #{pageNum}*#{amount}
-	  ]]>
-	  	<if test="keyword != null">
-        	<include refid="criteria"></include> 
+<select id="getListPaging" resultType="com.dogs.model.CommunityVO">
+    <![CDATA[
+    /* com.dogs.mapper.CommunityMapper.getListPaging */
+    WITH V_DATA AS (
+        SELECT rownum as rn, bno, title, writer, comcontent, comcatecode, regdate, updatedate
+        FROM (
+            SELECT *
+            FROM dogCommu
+            ORDER BY bno DESC -- bno를 역순으로 정렬
+        )
+        WHERE 
+    ]]>
+    <trim prefix="(" suffix=") AND" prefixOverrides="OR">
+        <if test="keyword != null">
+            <include refid="criteria"></include> 
         </if>
-	  
-	  <![CDATA[
-	  		)
-	  	where rn > (#{pageNum} - 1) * #{amount}
-	  ]]>
-	</select>
-  
+    </trim>
+    <![CDATA[
+        rownum <= #{pageNum}*#{amount}
+    ) SELECT * FROM V_DATA
+    WHERE rn > (#{pageNum} - 1) * #{amount}
+    ]]>
+</select>
+
   <!-- 커뮤니티 글 조회 -->
   <select id="getPage" resultType="com.dogs.model.CommunityVO">
   	select * from dogCommu where bno = #{bno}
@@ -68,6 +81,16 @@
   <delete id="delete">
   	delete from dogCommu where bno = #{bno}
   </delete>
+  
+  <!-- 이미지 등록 -->
+	<insert id="imageEnrollCommu">
+		insert into commuImage(bno, fileName, uploadPath, uuid) values (#{bno}, #{fileName}, #{uploadPath}, #{uuid})
+	</insert>
+	
+	<!-- 지정 상품 이미지 전체 삭제 --> 
+	<delete id="deleteComImageAll">
+		delete FROM commuImage where bno = #{bno}
+	</delete>
   
   <!-- 커뮤니티 총 개수 -->
   <select id="getTotal" resultType="int">

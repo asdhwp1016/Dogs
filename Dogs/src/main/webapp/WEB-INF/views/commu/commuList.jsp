@@ -33,11 +33,11 @@
 				<tr>
 					<td><c:out value="${list.bno}" /></td>
 					<td><a class="move" href='<c:out value="${list.bno}"/>'>
-						[<c:forEach items="${cateList}" var="cate">
-			                <c:if test="${cate.comCateCode eq list.comCateCode}">
-			                    <c:out value="${cate.comCateName}" />
-			                </c:if>
-            			</c:forEach>] 
+			                [<c:forEach items="${cateList}" var="cate">
+				                <c:if test="${cate.comCateCode eq list.comCateCode}">
+				                    <c:out value="${cate.comCateName}" />
+				                </c:if>
+			                </c:forEach>]
             			<c:out value="${list.title}" />
 						</a>
 					</td>
@@ -134,16 +134,14 @@
 
 		let moveForm = $("#moveForm");
 
-		$(".move").on(
-				"click",
-				function(e) {
-					e.preventDefault();
+		$(".move").on("click",function(e) {
+			e.preventDefault();
 
-					moveForm.append("<input type='hidden' name='bno' value='"
-							+ $(this).attr("href") + "'>");
-					moveForm.attr("action", "/commu/commuContent");
-					moveForm.submit();
-				});
+			moveForm.append("<input type='hidden' name='bno' value='"
+					+ $(this).attr("href") + "'>");
+			moveForm.attr("action", "/commu/commuContent");
+			moveForm.submit();
+		});
 
 		$(".pageInfo a").on("click", function(e) {
 
@@ -174,6 +172,7 @@
 			moveForm.find("input[name='keyword']").val(keyword);
 			moveForm.find("input[name='pageNum']").val(1);
 			moveForm.submit();
+			
 		});
 	</script>
 </body>

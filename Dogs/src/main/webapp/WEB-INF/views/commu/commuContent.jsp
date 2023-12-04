@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +12,16 @@
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../resources/css/commu/commuContent.css?after">
+<style type="text/css">
+	#result_card img{
+		max-width: 100%;
+	    height: auto;
+	    display: block;
+	    padding: 5px;
+	    margin-top: 10px;
+	    margin: auto;	
+	}
+</style>
 </head>
 <body>
 	<div class="board_wrap">
@@ -44,6 +54,16 @@
                 <div class="cont">
                   <c:out value="${pageInfo.comContent}"/>
                 </div>
+                <div class="form_section">
+           			<div class="form_section_title">
+           				<label>상품 이미지</label>
+           			</div>
+           			<div class="form_section_content">
+						<div id="uploadResult">
+															
+						</div>
+           			</div>
+           		</div>
             </div>
             <div class="bt_wrap">
                 <a class="btn on" id="list_btn">목록</a> 
@@ -71,7 +91,40 @@
 	$("#modify_btn").on("click", function(e){
 		form.attr("action", "/commu/commuModify");
 		form.submit();
-	});	
+	});
+	
+	$(document).ready(function() {
+		/* 이미지 정보 호출 */
+		let bno = '<c:out value="${pageInfo.bno}"/>';
+		let uploadResult = $("#uploadResult");			
+		
+		$.getJSON("/commu/getComAttachList", {bno : bno}, function(arr){
+			
+			if(arr.length === 0){
+				
+				let str = "";
+				str += "<div id='result_card'>";
+				str += "<img src='/resources/img/comNoImage.png'>";
+				str += "</div>";
+				
+				uploadResult.html(str);
+				return;
+			}
+			
+			let str = "";
+			let obj = arr[0];	
+			
+			let fileCallPath = encodeURIComponent(obj.uploadPath + "/s_" + obj.uuid + "_" + obj.fileName);
+			str += "<div id='result_card'";
+			str += "data-path='" + obj.uploadPath + "' data-uuid='" + obj.uuid + "' data-filename='" + obj.fileName + "'";
+			str += ">";
+			str += "<img src='/commu/commuDisplay?fileName=" + fileCallPath +"'>";
+			str += "</div>";		
+			
+			uploadResult.html(str);						
+			
+		});	
+	});
 </script>	
 </body>
 </html>

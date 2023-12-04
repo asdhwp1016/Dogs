@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.dogs.mapper.ReserveMapper">
+	<insert id="enroll">
+		insert into dogReserve(reserveId, reserveName, reservePhone, reserveDate)
+		values(#{reserveId}, #{reserveName}, #{reservePhone}, TO_DATE(#{reserveDate}, 'YYYY-MM-DD HH24:MI'))
+	</insert>
+	
+	<select id="getList" resultType="com.dogs.model.ReserveVO">
+		select * from dogReserve
+	</select>
+</mapper>

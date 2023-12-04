@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+ @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.revWrap {
+	width: 1600px;
+	margin-top: 30px;
+}
+
+.wrap {
+	width: 40%;
+	margin: 0 auto;
+}
+
+.title {
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+#enrollForm {
+	margin-left: 150px;
+	margin-bottom: 40px;
+}
+
+.info {
+	line-height: 21px;
+	padding: 16px 0;
+	font-size: 18px;
+	font-weight: 700
+}
+
+.lb {
+	color: #707070;
+	line-height: 16px;
+	margin-bottom: 4px;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.revName input {
+	border-radius: 8px;
+	box-sizing: border-box;
+	height: 48px !important;
+	background-color: #f5f5f5;
+	border: 1.5px solid #f5f5f5;
+	width: 340px;
+	font-size: 16px !important;
+	line-height: normal;
+	margin-bottom: 20px;
+}
+
+.revPhone {
+	display: flex;
+	width: 340px;
+}
+
+.revPhone input {
+	border-radius: 8px;
+	box-sizing: border-box;
+	height: 48px !important;
+	background-color: #f5f5f5;
+	border: 1.5px solid #f5f5f5;
+	width: 340px;
+	font-size: 16px !important;
+	line-height: normal;
+	margin-bottom: 20px;
+	flex: 1 1 auto;
+	margin-right: 8px;
+}
+
+.revPhone button {
+	flex: 0 0 auto;
+	background: #fff;
+	border: 1.5px solid #ebebeb;
+	color: #333;
+	border-radius: 10px;
+	height: 48px;
+	line-height: 19px;
+	padding: 0 18px;
+	cursor: pointer;
+}
+
+.revDate {
+	display: flex;
+	width: 340px;
+}
+
+.revDate input {
+	border-radius: 8px;
+	box-sizing: border-box;
+	height: 48px !important;
+	background-color: #f5f5f5;
+	border: 1.5px solid #f5f5f5;
+	width: 340px;
+	font-size: 16px !important;
+	line-height: normal;
+	margin-bottom: 20px;
+	flex: 1 1 auto;
+	margin-right: 8px;
+}
+
+.revDate button {
+	flex: 0 0 auto;
+	background: #fff;
+	border: 1.5px solid #ebebeb;
+	color: #333;
+	border-radius: 10px;
+	height: 48px;
+	line-height: 19px;
+	padding: 0 18px;
+	cursor: pointer;
+}
+
+.enrollBtn {
+	background: #1273e4;
+	border-radius: 10px;
+	height: 48px;
+	line-height: 19px;
+	padding: 0 18px;
+	border: none;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	text-align: center;
+	width: 150px;
+	margin-left: 160px;
+	margin-right: 10px;
+}
+
+.cancelBtn {
+	background: #F65762;
+	border-radius: 10px;
+	height: 48px;
+	line-height: 19px;
+	padding: 0 18px;
+	border: none;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	text-align: center;
+	width: 150px;
+}
+
+.ck_warn {
+	display: none;
+    color: #e05757;
+    font-weight: 300;
+    font-size: 13px !important;
+}
+
+.revPhone2 {
+	display: flex;
+	width: 340px;
+}
+
+.revPhone2 input {
+	border-radius: 8px;
+	box-sizing: border-box;
+	height: 48px !important;
+	background-color: #f5f5f5;
+	border: 1.5px solid #f5f5f5;
+	width: 340px;
+	font-size: 16px !important;
+	line-height: normal;
+	margin-bottom: 20px;
+	flex: 1 1 auto;
+	margin-right: 8px;
+}
+
+.revPhone2 button {
+	flex: 0 0 auto;
+	background: #fff;
+	border: 1.5px solid #ebebeb;
+	color: #333;
+	border-radius: 10px;
+	height: 48px;
+	line-height: 19px;
+	padding: 0 18px;
+	cursor: pointer;
+}

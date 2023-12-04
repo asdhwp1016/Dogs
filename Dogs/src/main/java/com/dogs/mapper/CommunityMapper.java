@@ -2,6 +2,7 @@ package com.dogs.mapper;
 
 import java.util.List;
 
+import com.dogs.model.ComAttachImageVO;
 import com.dogs.model.CommuCateVO;
 import com.dogs.model.CommunityVO;
 import com.dogs.model.Criteria;
@@ -25,6 +26,12 @@ public interface CommunityMapper {
 	
 	/* 커뮤니티 글 삭제 */
 	public int delete(int bno);
+	
+	/* 커뮤니티 이미지 등록 */
+	public void imageEnrollCommu(ComAttachImageVO vo);
+	
+	/* 커뮤니티 지정 이미지 전체 삭제 */
+	public void deleteComImageAll(int bno);
 	
 	/* 커뮤니티 총 개수 */
 	public int getTotal(Criteria cri);

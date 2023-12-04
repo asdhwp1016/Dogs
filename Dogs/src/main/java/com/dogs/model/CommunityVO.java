@@ -1,15 +1,13 @@
 package com.dogs.model;
 
 import java.util.Date;
+import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class CommunityVO {
+	
 	private int bno;
 	private String title;
 	private String writer;
@@ -17,5 +15,7 @@ public class CommunityVO {
 	private String comCateCode;
 	private Date regDate;
 	private Date updateDate;
+	private List<ComAttachImageVO> comImageList;
+	private CommuCateVO comCateVO;
 	
 }

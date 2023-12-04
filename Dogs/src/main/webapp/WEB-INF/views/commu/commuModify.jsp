@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +12,35 @@
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../resources/css/commu/commuContent.css?after">
+<style type="text/css">
+	#result_card img{
+		max-width: 100%;
+	    height: auto;
+	    display: block;
+	    padding: 5px;
+	    margin-top: 10px;
+	    margin: auto;	
+	}
+	#result_card {
+		position: relative;
+	}
+	.imgDeleteBtn{
+	    position: absolute;
+	    top: 0;
+	    right: 5%;
+	    background-color: #ef7d7d;
+	    color: wheat;
+	    font-weight: 900;
+	    width: 30px;
+	    height: 30px;
+	    border-radius: 50%;
+	    line-height: 26px;
+	    text-align: center;
+	    border: none;
+	    display: block;
+	    cursor: pointer;	
+	}
+</style>
 </head>
 <body>
 <form id="modifyForm" action="/commu/commuModify" method="post">
@@ -45,6 +74,17 @@
                 <div class="cont">
                   <textarea rows="3" name="comContent"><c:out value="${pageInfo.comContent}"/></textarea>
                 </div>
+                <div class="form_section">
+           			<div class="form_section_title">
+           				<label>상품 이미지</label>
+           			</div>
+           			<div class="form_section_content">
+						<input type="file" id ="fileItem" name='uploadFile' style="height: 30px;">
+						<div id="uploadResult">
+								
+						</div>	
+           			</div>
+           		</div>
             </div>
             <div class="bt_wrap">
                 <a class="btn on" id="list_btn">목록</a> 
@@ -133,6 +173,135 @@
 		form.attr("method", "post");
 		form.submit();
 	});	
+	
+	$(document).ready(function() {
+	    /* 이미지 정보 호출 */
+	    let bno = '<c:out value="${pageInfo.bno}"/>';
+	    let uploadResult = $("#uploadResult");            
+	    
+	    $.getJSON("/commu/getComAttachList", {bno : bno}, function(arr){
+	        
+	        if(arr.length === 0){
+	            
+	            let str = "";
+	            str += "<div id='result_card'>";
+	            str += "<img src='/resources/img/comNoImage.png'>";
+	            str += "</div>";
+	            
+	            uploadResult.html(str);
+	            return;
+	        }
+	        
+	        let str = "";
+	        let obj = arr[0];    
+	        
+	        let fileCallPath = encodeURIComponent(obj.uploadPath + "/s_" + obj.uuid + "_" + obj.fileName);
+	        str += "<div id='result_card'";
+	        str += "data-path='" + obj.uploadPath + "' data-uuid='" + obj.uuid + "' data-filename='" + obj.fileName + "'";
+	        str += ">";
+	        str += "<img src='/commu/commuDisplay?fileName=" + fileCallPath +"'>";
+	        str += "<div class='imgDeleteBtn' data-file='" + fileCallPath + "'>x</div>";
+	        str += "<input type='hidden' name='imageList[0].fileName' value='"+ obj.fileName +"'>";
+	        str += "<input type='hidden' name='imageList[0].uuid' value='"+ obj.uuid +"'>";
+	        str += "<input type='hidden' name='imageList[0].uploadPath' value='"+ obj.uploadPath +"'>";
+	        str += "</div>";     
+	        
+	        uploadResult.html(str);                        
+	        
+	    });   
+	    
+	    /* 이미지 삭제 버튼 동작 */
+	    $("#uploadResult").on("click", ".imgDeleteBtn", function(e){
+	        deleteFile();
+	        
+	    });
+	    
+	    /* 파일 삭제 메서드 */
+	    function deleteFile(){
+	        
+	        $("#result_card").remove();
+	        
+	    }
+	    
+	    /* 이미지 업로드 */
+	    $("input[type='file']").on("change", function(e) {
+	        
+	        /* 이미지 존재시 삭제 */
+	        if($("#result_card").length > 0){
+	            deleteFile();
+	        }
+	        
+	        let formData = new FormData();
+	        let fileInput = $('input[name="uploadFile"]');
+	        let fileList = fileInput[0].files;
+	        let fileObj = fileList[0];
+	        
+	        for(let i = 0; i < fileList.length; i++) {
+	            formData.append("uploadFile", fileObj);                
+	        }
+	        
+	        $.ajax({
+	            url: '/commu/imgUploadCommu',
+	            processData: false,
+	            contentType: false,
+	            data: formData,
+	            type: 'POST',
+	            dataType: 'json',
+	            success : function(result){
+	                console.log(result);
+	                showUploadImage(result);
+	            },
+	            error : function(result){
+	                alert("이미지 파일이 아닙니다.");
+	            }
+	        });
+	        
+	    });
+	    
+	    // var , method, related with attachFile
+	    let regex = new RegExp("(.*?)\.(jpg|png)$");
+	    let maxSize = 1048576;
+	    
+	    function fileCheck(fileName, fileSize) {
+	        if(fileSize >= maxSize) {
+	            alert("파일 사이즈 초과");
+	            return false;
+	        }
+	        
+	        if(!regex.test(fileName)) {
+	            alert("해당 종류의 파일은 업로드 할 수 없습니다.");
+	            return false;
+	        }
+	        
+	        return true;
+	    }
+	    
+	    /* 이미지 출력 */
+	    function showUploadImage(uploadResultArr){
+	        
+	        /* 전달받은 데이터 검증 */
+	        if(!uploadResultArr || uploadResultArr.length == 0){return}
+	        
+	        let uploadResult = $("#uploadResult");
+	        
+	        let obj = uploadResultArr[0];
+	        
+	        let str = "";
+	        
+	        let fileCallPath = encodeURIComponent(obj.uploadPath.replace(/\\/g, '/') + "/s_" + obj.uuid + "_" + obj.fileName);
+	        
+	        str += "<div id='result_card'>";
+	        str += "<img src='/commu/commuDisplay?fileName=" + fileCallPath +"'>";
+	        str += "<div class='imgDeleteBtn' data-file='" + fileCallPath + "'>x</div>";
+	        str += "<input type='hidden' name='comImageList[0].fileName' value='"+ obj.fileName +"'>";
+	        str += "<input type='hidden' name='comImageList[0].uuid' value='"+ obj.uuid +"'>";
+	        str += "<input type='hidden' name='comImageList[0].uploadPath' value='"+ obj.uploadPath +"'>";
+	        str += "</div>";     
+	        
+	        uploadResult.append(str);
+	        
+	    }
+	});
 </script>	
 </body>
 </html>
