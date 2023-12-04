@@ -21,50 +21,144 @@
 <%@include file="./includes/mainhf/header.jsp"%>
 
 <div class="mainwapper">
-	<div class="adbanner">
-		<img src="resources/img/adbanner1.png">
+	<div class="mainad">
+		<div class="adbanner">
+			<img src="resources/img/adbanner1.png">
+		</div>
+		<div class="adbanner">
+			<img src="resources/img/adbanner2.png">
+		</div>
+		<div class="adbanner">
+			<img src="resources/img/adbanner3.png">
+		</div>
 	</div>
-	<div class="adbanner">
-		<img src="resources/img/adbanner2.png">
-	</div>
-	<div class="adbanner">
-		<img src="resources/img/adbanner3.png">
+	
+	<div class="mainnav">
+		<div class="dogintroduce">
+			<div class="title">
+				<h1>ALL PUPPY</h1>
+				<a>♥PUPPY의 사랑스러운 가족을 소개합니다♥</a>
+			</div>
+			
+			<div class="dogBoxes">
+				<ul>
+					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+						<li class="dogBox">
+							
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+			
+			<div class="dogBoxes">
+				<ul>
+					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+						<li class="dogBox">
+							
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+			
+			<div class="dogBoxes">
+				<ul>
+					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+						<li class="dogBox">
+							
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+			
+			<div class="dogBoxes">
+				<ul>
+					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+						<li class="dogBox">
+							
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="dogad">
+			<div class="dogad1">
+				<img src="resources/img/dogad1.jpg">
+			</div>
+		</div>
+		
+		
+		<div class="dogmainreview">
+			<div class="title">
+				<h1>PUPPY REVIEW</h1>
+				<a>♥사랑스러운 가족이 생긴 고객분들의 리뷰♥</a>
+			</div>
+			
+			<div class="dogReviewBoxes">
+				<ul>
+					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+						<li class="dogReviewBox">
+							
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+			
+			<div class="dogReviewBoxes">
+				<ul>
+					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+						<li class="dogReviewBox">
+							
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+			
+			<div class="dogReviewBoxes">
+				<ul>
+					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+						<li class="dogReviewBox">
+							
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+			
+			<div class="dogReviewBoxes">
+				<ul>
+					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+						<li class="dogReviewBox">
+							
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="dogad">
+			<div class="dogad2">
+				<img src="resources/img/dogad2.jpg">
+			</div>
+		</div>
+		
+		<div class="finalad">
+			<div class="dogad3">
+				<img src="resources/img/dogad3.png">
+			</div>
+		</div>
 	</div>
 </div>
 
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
-<p>아 진짜 스트레스 너무 받는다</p>
+
+<%@include file="./includes/mainhf/footer.jsp"%>
+
+
+
+
+
+
+
+
 
 
 

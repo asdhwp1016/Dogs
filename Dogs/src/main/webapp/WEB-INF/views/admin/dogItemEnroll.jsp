@@ -22,7 +22,6 @@
                     <div class="admin_content_subject"><span>상품 등록</span></div>
                 </div>
                 <div class="clearfix"></div>
-            </div>
         
         <!-- Footer 영역 -->
         <div class="footer_nav">

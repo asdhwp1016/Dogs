@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+
+.foot {
+	position: relative;
+	width: 100%;
+	height: 330px;
+	top: 180px;
+	background-color: black;
+	overflow: hidden;
+}
+
+.foot>h1 {
+	font-weight: bold;
+	color: white;
+	margin-left: 15px;
+	margin-top: 40px;
+}
+
+.foot .footbox {
+	position: relative;
+	height: 160px;
+	width: 870px;
+	margin-left: 15px;
+	margin-top: 30px;
+}
+
+.foot .footbox a {
+	color: darkgray;
+	font-size: 0.8em;
+}
+
+.foot .footbox p {
+	color: gray;
+	font-size: 0.75em;
+}
+
+.foot .footbox2 {
+	position: absolute;
+	width: 600px;
+	height: 160px;
+	right: 0%;
+	top: 70px;
+}
+
+.foot .footbox2 ul {
+	float: left;
+	text-decoration: none;
+}
+
+.foot .footbox2 ul li {
+	float: left;
+	list-style: none;
+	text-decoration-line: none;
+}
+
+.foot .footbox2 ul .f1, .f4, .f7, .f10 {
+	margin-left: 0;
+}
+
+.foot .footbox2 ul .f2, .f3 {
+	margin-left: 100px;
+}
+
+.foot .footbox2 ul .f5 {
+	margin-left: 105px;
+}
+
+.foot .footbox2 ul .f6 {
+	margin-left: 121px;
+}
+
+.foot .footbox2 ul .f8 {
+	margin-left: 106px;
+}
+
+.foot .footbox2 ul .f9 {
+	margin-left: 147px;
+}
+
+.foot .footbox2 ul .f11 {
+	margin-left: 53px;
+}
+
+.foot .footbox2 ul .f12 {
+	margin-left: 80px;
+}
+
+.foot .footbox2 a {
+	text-decoration: none;
+	font-size: 0.8em;
+	color: darkgray;
+}
+
+.foot .footbox2 ul .f1, .f2, .f3 {
+	font-weight: bold;
+	color: white;
+}

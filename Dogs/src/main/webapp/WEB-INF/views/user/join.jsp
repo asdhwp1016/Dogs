@@ -66,7 +66,7 @@
 						<input class="mail_input" name="email">
 					</div>
 					<span class="final_mail_ck">이메일을 입력해주세요.</span>
-					<sapn class="mail_input_box_warn"></sapn>
+					<span class="mail_input_box_warn"></span>
 					<div class="mail_check_wrap">
 						<div class="mail_check_input_box" id="mail_check_input_box_false">
 							<input class="mail_check_input" disabled="disabled">

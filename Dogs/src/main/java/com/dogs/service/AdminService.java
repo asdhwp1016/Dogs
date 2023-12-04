@@ -2,6 +2,7 @@ package com.dogs.service;
 
 import java.util.List;
 
+import com.dogs.model.AttachDogImageVO;
 import com.dogs.model.Criteria;
 import com.dogs.model.DogCateVO;
 import com.dogs.model.DogVO;
@@ -28,5 +29,6 @@ public interface AdminService {
 	
 	/*강아지 상품 삭제*/
 	public int dogsDelete(int dogId);
+	
 	
 }

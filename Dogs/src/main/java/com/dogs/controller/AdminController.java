@@ -3,7 +3,11 @@ package com.dogs.controller;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import java.net.URLDecoder;
+import java.nio.file.Files;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -13,6 +17,9 @@ import javax.imageio.ImageIO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +29,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.dogs.model.AttachDogImageVO;
 import com.dogs.model.Criteria;
 import com.dogs.model.DogVO;
 import com.dogs.model.PageDTO;
 import com.dogs.service.AdminService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import net.coobird.thumbnailator.Thumbnails;
 
 @Controller
 @RequestMapping("/admin")
@@ -151,7 +161,7 @@ public class AdminController {
     }
     
     
-    /*상품 정보 삭제*/
+    /*강쥐 상품 정보 삭제*/
     @PostMapping("/dogsDelete")
     public String dogsDeletePOST(int dogId, RedirectAttributes attr) {
     	
@@ -166,12 +176,35 @@ public class AdminController {
     }
     
     
-    /* 첨부 파일 업로드 */
-    @PostMapping("/uploadAjaxAction")
-    public void uploadAjaxActionPOST(MultipartFile[] uploadFile, MultipartFile[] uploadFile1, MultipartFile[] uploadFile2, MultipartFile[] uploadFile3) {
+    /*첨부 파일 업로드*/
+	@PostMapping(value="/uploadAjaxAction", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<AttachDogImageVO>> uploadAjaxActionPOST(MultipartFile[] uploadFile) {
 		
 		logger.info("uploadAjaxActionPOST..........");
-		String uploadFolder = "D:\\DogUpload";
+		
+		/*이미지 파일 체크*/
+		for(MultipartFile multipartFile: uploadFile) {
+			
+			File checkfile = new File(multipartFile.getOriginalFilename());
+			String type = null;
+			
+			try {
+				type = Files.probeContentType(checkfile.toPath());
+				logger.info("MIME TYPE : " + type);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			if(!type.startsWith("image")) {
+				
+				List<AttachDogImageVO> list = null;
+				return new ResponseEntity<>(list, HttpStatus.BAD_REQUEST);
+				
+			}
+			
+		} //for
+		
+		String uploadFolder = "C:\\upload";
 		
 		/*날짜 폴더 경로*/
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -182,120 +215,105 @@ public class AdminController {
 		
 		String datePath = str.replace("-", File.separator);
 		
-		/* 폴더 생성 */
+		/*폴더 생성*/
 		File uploadPath = new File(uploadFolder, datePath);
 		
 		if(uploadPath.exists() == false) {
 			uploadPath.mkdirs();
 		}
+				
+				/*이미지 정보 담는 객체*/
+				List<AttachDogImageVO> list = new ArrayList();
 		
-		// 향상된 for 메인 이미지
-		for(MultipartFile multipartFile : uploadFile) {
+				// 향상된 for
+				for(MultipartFile multipartFile : uploadFile) {
 					
-			/* 파일 이름 */
-			String uploadFileName = multipartFile.getOriginalFilename();		
-			
-			/* uuid 적용 파일 이름 */
-			String uuid = UUID.randomUUID().toString();
-			
-			uploadFileName = uuid + "_" + uploadFileName;
-			
-			/* 파일 위치, 파일 이름을 합친 File 객체 */
-			File saveFile = new File(uploadPath, uploadFileName);
-			
-			/* 파일 저장 */
-			try {
+					/*이미지 정보 객체*/
+					AttachDogImageVO vo = new AttachDogImageVO();
+					
+					/*파일 이름*/
+					String uploadFileName = multipartFile.getOriginalFilename();
+					vo.setFileMain(uploadFileName);
+					vo.setUploadPath(datePath);
+					
+					/*uuid 적용 파일 이름*/
+					String uuid = UUID.randomUUID().toString();
+					vo.setUuid(uuid);
+					
+					uploadFileName = uuid + "_" + uploadFileName;
+					
+					/*파일 위치, 파일 이름을 합친 File 객체*/
+					File saveFile = new File(uploadPath, uploadFileName);
+					
+					/*파일 저장*/
+					try {
+						multipartFile.transferTo(saveFile);
+						
+						/*썸네일 생성(ImageIO)*/
+						File thumbnailFile = new File(uploadPath, "s_" + uploadFileName);
+						
+						BufferedImage bo_image = ImageIO.read(saveFile);
+						
+						//비율
+						double ratio = 3;
+						//넓이 높이
+						int width = (int)(bo_image.getWidth() / ratio);
+						int height = (int)(bo_image.getHeight() / ratio);
+						
+						Thumbnails.of(saveFile)
+						.size(width, height)
+						.toFile(thumbnailFile);
+						
+					}catch(Exception e) {
+						e.printStackTrace();
+					}
+					
+					list.add(vo);
+					
+				} // for
 				
-				multipartFile.transferTo(saveFile);
+				ResponseEntity<List<AttachDogImageVO>> result = new ResponseEntity<List<AttachDogImageVO>>(list, HttpStatus.OK);
 				
-				/*썸네일 생성(ImageIO)*/
-				File thumbnailFile = new File(uploadPath, "s_" + uploadFileName);
-				
-				BufferedImage bo_image = ImageIO.read(saveFile);
-				BufferedImage bt_image = new BufferedImage(300, 500, BufferedImage.TYPE_3BYTE_BGR);
-								
-				Graphics2D graphic = bt_image.createGraphics();
-				
-				graphic.drawImage(bo_image, 0, 0,300,500, null);
-					
-				ImageIO.write(bt_image, "png", thumbnailFile);
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-		}
-		
-		// 향상된 for 서브 이미지1
-		for(MultipartFile multipartFile : uploadFile1) {
-							
-			/* 파일 이름 */
-			String uploadFileName = multipartFile.getOriginalFilename();		
-			
-			/* uuid 적용 파일 이름 */
-			String uuid = UUID.randomUUID().toString();
-			
-			uploadFileName = uuid + "_" + uploadFileName;
-					
-			/* 파일 위치, 파일 이름을 합친 File 객체 */
-			File saveFile = new File(uploadPath, uploadFileName);
-					
-			/* 파일 저장 */
-			try {
-				multipartFile.transferTo(saveFile);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-					
-		}
-				
-		// 향상된 for 서브 이미지2
-		for(MultipartFile multipartFile : uploadFile2) {
-							
-			/* 파일 이름 */
-			String uploadFileName = multipartFile.getOriginalFilename();
-			
-			/* uuid 적용 파일 이름 */
-			String uuid = UUID.randomUUID().toString();
-			
-			uploadFileName = uuid + "_" + uploadFileName;
-					
-			/* 파일 위치, 파일 이름을 합친 File 객체 */
-			File saveFile = new File(uploadPath, uploadFileName);
-					
-			/* 파일 저장 */
-			try {
-				multipartFile.transferTo(saveFile);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-					
-		}
-				
-		// 향상된 for 서브 이미지3
-		for(MultipartFile multipartFile : uploadFile3) {
-							
-			/* 파일 이름 */
-			String uploadFileName = multipartFile.getOriginalFilename();	
-			
-			/* uuid 적용 파일 이름 */
-			String uuid = UUID.randomUUID().toString();
-			
-			uploadFileName = uuid + "_" + uploadFileName;
-					
-			/* 파일 위치, 파일 이름을 합친 File 객체 */
-			File saveFile = new File(uploadPath, uploadFileName);
-					
-			/* 파일 저장 */
-			try {
-				multipartFile.transferTo(saveFile);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-					
-		}
+				return result;
 		
 	}
+	
+	
+	
+	/*이미지 파일 삭제*/
+	@PostMapping("/deleteFile")
+	public ResponseEntity<String> deleteFile(String fileName) {
+		
+		logger.info("deleteFile........" + fileName);
+		
+		File file = null;
+		
+		try {
+			/*썸네일 파일 삭제*/
+			file = new File("c:\\upload\\" + URLDecoder.decode(fileName, "UTF-8"));
+			
+			file.delete();
+			
+			/*원본 파일 삭제*/
+			String originFileName = file.getAbsolutePath().replace("s_", "");
+			
+			logger.info("originFileName : " + originFileName);
+			
+			file = new File(originFileName);
+			
+			file.delete();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+			return new ResponseEntity<String>("fail", HttpStatus.NOT_IMPLEMENTED);
+		} //catch
+		
+		return new ResponseEntity<String>("success", HttpStatus.OK);
+		
+	}
+    
+
     
 	
 }

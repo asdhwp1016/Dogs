@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.dogs.mapper.AdminMapper;
+import com.dogs.model.AttachDogImageVO;
 import com.dogs.model.Criteria;
 import com.dogs.model.DogCateVO;
 import com.dogs.model.DogVO;
@@ -20,12 +22,24 @@ public class AdminServiceImpl implements AdminService {
 	private AdminMapper adminMapper;
 	
 	/*강쥐 등록*/
+	@Transactional
 	@Override
 	public void dogEnroll(DogVO dog) {
 		
 		log.info("(service)dogEnroll........");
 		
 		adminMapper.dogEnroll(dog);
+		
+		if(dog.getImageList() == null || dog.getImageList().size() <= 0) {
+			return;
+		}
+		
+		dog.getImageList().forEach(attach ->{
+			
+			attach.setDogId(dog.getDogId());
+			adminMapper.dogImageEnroll(attach);
+			
+		});
 		
 	}
 
@@ -85,5 +99,7 @@ public class AdminServiceImpl implements AdminService {
 		return adminMapper.dogsDelete(dogId);
 		
 	}
+
+	
 
 }

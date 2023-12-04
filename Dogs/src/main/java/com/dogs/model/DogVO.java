@@ -1,6 +1,7 @@
 package com.dogs.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class DogVO {
 
@@ -33,6 +34,9 @@ public class DogVO {
 
 	/*카테고리 테이블의 카테코드*/
 	private String dCateCode;
+	
+	/*이미지 정보*/
+	private List<AttachDogImageVO> imageList;
 	
 	public int getDogId() {
 		return dogId;
@@ -113,12 +117,31 @@ public class DogVO {
 	public void setDCateCode(String dCateCode) {
 	    this.dCateCode = dCateCode;
 	}
+	
+	
+
+	public String getdCateCode() {
+		return dCateCode;
+	}
+
+	public void setdCateCode(String dCateCode) {
+		this.dCateCode = dCateCode;
+	}
+
+	public List<AttachDogImageVO> getImageList() {
+		return imageList;
+	}
+
+	public void setImageList(List<AttachDogImageVO> imageList) {
+		this.imageList = imageList;
+	}
 
 	@Override
 	public String toString() {
 		return "DogVO [dogId=" + dogId + ", dogCateCode=" + dogCateCode + ", dogName=" + dogName + ", dogPrice="
 				+ dogPrice + ", dogPoint=" + dogPoint + ", dogContent=" + dogContent + ", regDate=" + regDate
-				+ ", updateDate=" + updateDate + ", dCateName=" + dCateName + ", dCateCode=" + dCateCode + "]";
+				+ ", updateDate=" + updateDate + ", dCateName=" + dCateName + ", dCateCode=" + dCateCode
+				+ ", imageList=" + imageList + "]";
 	}
 
 	

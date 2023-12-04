@@ -10,9 +10,18 @@ html, body {
 	top: 0;
     left: 0;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     width: 100%;
     position: relative;
+}
+
+.mainad {
+	width: 100%;
+    height: 925px;
+    overflow: hidden; /* 공간이나 내용이 넘치는 경우 숨김 처리 */
+    position: relative; /* 위치 지정을 변경 */
+    top: 0;
+    left: 0;
 }
 
 .adbanner {
@@ -30,9 +39,96 @@ html, body {
     object-fit: cover; /* 이미지를 늘리거나 줄여서 채우도록 설정 */
 }
 
+.mainnav {
+	width: 100%;
+	height: 100%;	
+	position: relative;
+	padding: 0;
+	margin: 0;
+	top: 80px;
+}
 
+.dogintroduce {
+	width: 1600px;
+	height: 1750px;
+	position:relative;
+	margin: 0 auto;	
+	text-align: center; /* 중앙 정렬을 위해 추가 */
+}
 
+.dogintroduce .title {
+	text-align: center;
+}
 
+.dogBoxes ul {
+	/* 자식 요소를 중앙 정렬하기 */
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	margin-right: 40px;
+}
 
+.dogBoxes ul li {
+	width: 350px;
+	height: 350px;
+	background-color: black;
+	margin: 15px 25px;
+}
 
+.dogad {
+	position: relative;
+	width: 1600px;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.dogad img {
+	width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지를 늘리거나 줄여서 채우도록 설정 */
+}
+
+.dogmainreview {
+	width: 1600px;
+	height: 2150px;
+	position:relative;
+	margin: 0 auto;	
+	text-align: center; /* 중앙 정렬을 위해 추가 */
+	margin-top: 70px;
+}
+
+.dogmainreview .title {
+	text-align: center;
+}
+
+.dogReviewBoxes ul {
+	/* 자식 요소를 중앙 정렬하기 */
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	margin-right: 40px;
+}
+
+.dogReviewBoxes ul li {
+	width: 400px;
+	height: 450px;
+	background-color: black;
+	margin: 15px 10px;
+}
+
+.finalad {
+	position: relative;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 80px;
+}
+
+.finalad img {
+	width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지를 늘리거나 줄여서 채우도록 설정 */
+}
 

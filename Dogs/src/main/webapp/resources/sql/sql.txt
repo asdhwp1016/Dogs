@@ -43,12 +43,15 @@ CREATE SEQUENCE dog_Id_seq START WITH 1;
 drop table dogImage;
 create table dogImage(
     dogId number,
-    fileMain varchar2(100),
-    fileSub1 varchar2(100),
-    fileSub2 varchar2(100),
-    fileSub3 varchar2(100),
+    fileMain varchar2(1000),
+    fileSub1 varchar2(1000),
+    fileSub2 varchar2(1000),
+    fileSub3 varchar2(1000),
     uploadPath varchar2(200),
-    uuid varchar2(100) primary key,
+    uuid varchar2(100),
+    uuid1 varchar2(100),
+    uuid2 varchar2(100),
+    uuid3 varchar2(100),
     foreign key (dogId) references dog(dogId)
 );
 drop SEQUENCE dogImage_seq;
@@ -178,6 +181,17 @@ commit;
 
 
 
+
+
+
+
+insert into dogcate values('001', '말티즈');
+insert into dogcate values('002', '푸들');
+insert into dogcate values('003', '포메라니안');
+insert into dogcate values('004', '비숑');
+insert into dogcate values('005', '불독');
+insert into dogcate values('006', '웰시코기');
+insert into dogcate values('007', '말티푸');
 
 
 

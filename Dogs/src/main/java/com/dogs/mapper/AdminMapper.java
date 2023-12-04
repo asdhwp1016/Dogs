@@ -2,6 +2,7 @@ package com.dogs.mapper;
 
 import java.util.List;
 
+import com.dogs.model.AttachDogImageVO;
 import com.dogs.model.Criteria;
 import com.dogs.model.DogCateVO;
 import com.dogs.model.DogVO;
@@ -29,4 +30,6 @@ public interface AdminMapper {
 	/*강아지 상품 삭제*/
 	public int dogsDelete(int dogId);
 	
+	/*강아지 이미지 등록*/
+	public void dogImageEnroll(AttachDogImageVO vo);
 }

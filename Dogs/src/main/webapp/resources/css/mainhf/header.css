@@ -2,20 +2,8 @@
 
 /* Screen total level */
 .headerwrapper {
-	position: fixed; /* 항상 화면 상단에 고정 */
-    top: 0;
-    left: 0;
-	padding : 0;
-	margin : 0;
-    width: 100%;
-    z-index: 1000; /* 헤더를 다른 요소보다 위에 표시하기 위한 우선순위 설정 */
-}
-
-.newHeader {
-    /* 새로운 헤더의 스타일을 정의 */
-    background-color: white;
-    /* 원하는 스타일을 여기에 추가 */
-    position: fixed; /* 항상 화면 상단에 고정 */
+	position: fixed;
+	background:!transparent;
     top: 0;
     left: 0;
 	padding : 0;
@@ -39,7 +27,7 @@
     left: 0;
     transform: translateY(-50%);
     height : 100px;
-    weight : 120px;
+    width : 120px;
 }
 .logo_area a img {
 	left : 0;

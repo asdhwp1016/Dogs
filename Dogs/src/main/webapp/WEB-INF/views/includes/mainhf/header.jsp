@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="resources/css/mainhf/header.css?after">
+<link rel="stylesheet" href="resources/css/mainhf/header.css?v=1">
 
 <script src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -102,38 +102,9 @@
 </div>
 
 <script>
-$(document).ready(function() {
-    var header = $(".headerwrapper");
-    var newHeader = $("<div class='headerwrapper newHeader'></div>");
 
-    // 스크롤 이벤트
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
 
-        if (scroll > 120) {
-            // 스크롤이 120 이상이면 새로운 헤더로 변경
-            if (!header.hasClass("newHeader")) {
-                header.replaceWith(newHeader);
-            }
-        } else {
-            // 스크롤이 120 이하이면 원래 헤더로 변경
-            if (header.hasClass("newHeader")) {
-                newHeader.replaceWith(header);
-            }
-        }
-    });
 
-    // 추가된 부분: 페이지 맨 위로 스크롤 할 때 기존 헤더로 복원
-    $("html, body").on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){
-        $('html, body').stop();	
-    });
-
-    // 페이지 상단을 클릭하면 맨 위로 스크롤
-    $('.headerwrapper.newHeader').click(function(){
-        $("html, body").animate({ scrollTop: 0 }, 600);
-        return false;
-    });
-});
 </script>
 
 </body>

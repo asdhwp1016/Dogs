@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.dogs.model.AttachDogImageVO;
 import com.dogs.model.Criteria;
 import com.dogs.model.DogVO;
 
@@ -19,22 +20,26 @@ public class AdminMapperTests {
 	private AdminMapper mapper;
 	
 	/*강아지 등록*/
-	/*
+	
 	@Test
 	public void dogEnrollTest() throws Exception {
 		
 		DogVO dog = new DogVO();
 		
-		dog.setDogName("mapper 테스트");
-		dog.setDogCateCode("001");
-		dog.setDogPrice(200000);
+		dog.setDogName("웅애애애애ㅐ");
+		dog.setDogCateCode("006");
+		dog.setDogPrice(400000);
 		dog.setDogPoint("귀여움");
-		dog.setDogContent("우리집은 동구가 있다");
+		dog.setDogContent("이거 왜 오류가 나는걸까");
+		
+		System.out.println("Before DogVO : " + dog);
 		
 		mapper.dogEnroll(dog);
 		
+		System.out.println("After DogVO : " + dog);
+		
 	}
-	*/
+	
 	
 	
 	/*강아지 카테고리 리스트*/
@@ -107,6 +112,7 @@ public class AdminMapperTests {
 	
 	
 	/*강아지 상품 정보 삭제*/
+	/*
 	@Test
 	public void dogsDeleteTest() {
 		
@@ -119,6 +125,29 @@ public class AdminMapperTests {
 		}
 		
 	}
+	*/
+	
+	
+	/*이미지 등록*/
+	/*
+	@Test
+	public void dogImageEnrollTest() {
+		
+		AttachDogImageVO vo = new AttachDogImageVO();
+		
+		vo.setDogId(3);
+		vo.setFileMain("test");
+		vo.setFileSub1("test");
+		vo.setFileSub2("test");
+		vo.setFileSub3("test");
+		vo.setUploadPath("test");
+		vo.setUuid("test2");
+		
+		mapper.dogImageEnroll(vo);
+		
+	}
+	*/
+	
 	
 	
 }

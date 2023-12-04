@@ -6,6 +6,12 @@
 	<!-- 강쥐 등록 -->
 	<insert id = "dogEnroll">
 	
+		<selectKey resultType="int" keyProperty="dogId" order="AFTER">
+  		
+  			SELECT MAX(dogId) FROM dog
+  		
+  		</selectKey>  	
+	
 		insert into dog(dogId, dogCateCode, dogName, dogPrice, dogPoint, dogContent)
 		values(dog_Id_seq.nextval, #{dogCateCode}, #{dogName}, #{dogPrice}, #{dogPoint}, #{dogContent})
 	
@@ -83,6 +89,13 @@
 		delete from dog where dogId = #{dogId}
 	
 	</delete>
+	
+	
+	<!-- 강아지 이미지 등록 -->
+	<insert id="dogImageEnroll">
+   	 	insert into dogImage(dogId, fileMain, fileSub1, fileSub2, fileSub3, uploadPath, uuid, uuid1, uuid2, uuid3)
+    	values (#{dogId}, #{fileMain}, #{fileSub1}, #{fileSub2}, #{fileSub3}, #{uploadPath}, #{uuid}, #{uuid1}, #{uuid2}, #{uuid3})
+	</insert>
 	
 
   </mapper>
