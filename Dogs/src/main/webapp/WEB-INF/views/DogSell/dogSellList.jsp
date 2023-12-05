@@ -9,7 +9,7 @@
        .top-bar {
     background-color: lightgrey;
     padding: 5px;
-    margin: 5px auto; /* Auto margin on the left and right to center the top bar */
+    margin: 160px auto 5px; /* Updated margin property with 140px top margin */
     width: 90%;
     max-width: 1200px;
     display: flex;
@@ -61,9 +61,7 @@
     
     <!-- Top Bar -->
     <div class="top-bar">
-        <a href="#">말티즈</a>
-        <a href="#">푸들</a>
-        <a href="#">포메라니안</a>
+        <a href="/DogSell/dogSellDetail">포메라니안</a>
         <a href="#">비숑</a>
         <a href="#">불독</a>
         <a href="#">웰시코기</a>
@@ -78,10 +76,10 @@
                 <c:set var="i" value="1"/>
                 <c:set var="j" value="40"/>
                 <c:forEach begin="${i}" end="${j}" step="1" varStatus="loop">
-                    <div class="content">
+                    <div class="content"> 
                         <c:choose>
                             <c:when test="${loop.index == 1}">
-                                <img src="../resources/img/adbanner1.png" class="image"/>
+                              <img src="../resources/img/adbanner1.png" class="image"/></a>
                             </c:when>
                             <c:otherwise>
                                 <img src="http://cfile24.uf.tistory.com/image/19741B4B50194022057DF6" class="image"/>

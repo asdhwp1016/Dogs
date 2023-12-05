@@ -36,6 +36,12 @@ public class DogController {
 	   public void dogSellListPageGET() {
 	      logger.info("신규분양 페이지 진입");
 	   }
+	   
+	 //신규분양 상세 페이지 이동
+	   @RequestMapping(value = "/DogSell/dogSellDetail", method = RequestMethod.GET)
+	   public void dogSellDetailPageGET() {
+	      logger.info("신규분양 상세정보 페이지 진입");
+	   }
 	
 	
 	//강아지 이미지 업로드 뷰
