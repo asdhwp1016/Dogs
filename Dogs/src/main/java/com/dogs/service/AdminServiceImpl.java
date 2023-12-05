@@ -30,17 +30,6 @@ public class AdminServiceImpl implements AdminService {
 		
 		adminMapper.dogEnroll(dog);
 		
-		if(dog.getImageList() == null || dog.getImageList().size() <= 0) {
-			return;
-		}
-		
-		dog.getImageList().forEach(attach ->{
-			
-			attach.setDogId(dog.getDogId());
-			adminMapper.dogImageEnroll(attach);
-			
-		});
-		
 	}
 
 	

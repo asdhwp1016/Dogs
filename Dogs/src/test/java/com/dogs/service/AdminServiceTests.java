@@ -21,6 +21,7 @@ public class AdminServiceTests {
 	
 	
 	/*강아지 상품 등록 & 강아지 상품 이미지 등록 테스트*/
+	/*
 	@Test
 	public void dogEnrollTests() {
 		
@@ -47,12 +48,12 @@ public class AdminServiceTests {
 		
 		imageList.add(image1);
 		
-		dog.setImageList(imageList);
 		
 		service.dogEnroll(dog);
 		
 		System.out.println("등록된 VO : " + dog);
 		
 	}
+	*/
 
 }

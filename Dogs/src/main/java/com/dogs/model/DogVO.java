@@ -1,8 +1,12 @@
 package com.dogs.model;
 
 import java.util.Date;
-import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
+import lombok.Data;
+
+@Data
 public class DogVO {
 
 	/* 강쥐 id */
@@ -35,73 +39,18 @@ public class DogVO {
 	/*카테고리 테이블의 카테코드*/
 	private String dCateCode;
 	
-	/*이미지 정보*/
-	private List<AttachDogImageVO> imageList;
+	/*메인 이미지*/
+    private MultipartFile fileMain;
 	
-	public int getDogId() {
-		return dogId;
-	}
-
-	public void setDogId(int dogId) {
-		this.dogId = dogId;
-	}
-
-	public String getDogCateCode() {
-		return dogCateCode;
-	}
-
-	public void setDogCateCode(String dogCateCode) {
-		this.dogCateCode = dogCateCode;
-	}
-
-	public String getDogName() {
-		return dogName;
-	}
-
-	public void setDogName(String dogName) {
-		this.dogName = dogName;
-	}
-
-	public int getDogPrice() {
-		return dogPrice;
-	}
-
-	public void setDogPrice(int dogPrice) {
-		this.dogPrice = dogPrice;
-	}
-
-	public String getDogPoint() {
-		return dogPoint;
-	}
-
-	public void setDogPoint(String dogPoint) {
-		this.dogPoint = dogPoint;
-	}
-
-	public String getDogContent() {
-		return dogContent;
-	}
-
-	public void setDogContent(String dogContent) {
-		this.dogContent = dogContent;
-	}
-
-	public Date getRegDate() {
-		return regDate;
-	}
-
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
-	}
-
-	public Date getUpdateDate() {
-		return updateDate;
-	}
-
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
-	}
+	/*서브 이미지1*/
+	private MultipartFile fileSub1;
 	
+	/*서브 이미지2*/
+	private MultipartFile fileSub2;
+	
+	/*서브 이미지3*/
+	private MultipartFile fileSub3;
+
 	public String getdCateName() {
 		return dCateName;
 	}
@@ -109,16 +58,6 @@ public class DogVO {
 	public void setdCateName(String dCateName) {
 		this.dCateName = dCateName;
 	}
-	
-	public String getDCateCode() {
-	    return dCateCode;
-	}
-
-	public void setDCateCode(String dCateCode) {
-	    this.dCateCode = dCateCode;
-	}
-	
-	
 
 	public String getdCateCode() {
 		return dCateCode;
@@ -127,22 +66,6 @@ public class DogVO {
 	public void setdCateCode(String dCateCode) {
 		this.dCateCode = dCateCode;
 	}
-
-	public List<AttachDogImageVO> getImageList() {
-		return imageList;
-	}
-
-	public void setImageList(List<AttachDogImageVO> imageList) {
-		this.imageList = imageList;
-	}
-
-	@Override
-	public String toString() {
-		return "DogVO [dogId=" + dogId + ", dogCateCode=" + dogCateCode + ", dogName=" + dogName + ", dogPrice="
-				+ dogPrice + ", dogPoint=" + dogPoint + ", dogContent=" + dogContent + ", regDate=" + regDate
-				+ ", updateDate=" + updateDate + ", dCateName=" + dCateName + ", dCateCode=" + dCateCode
-				+ ", imageList=" + imageList + "]";
-	}
-
+	
 	
 }

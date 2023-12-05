@@ -12,8 +12,8 @@
   		
   		</selectKey>  	
 	
-		insert into dog(dogId, dogCateCode, dogName, dogPrice, dogPoint, dogContent)
-		values(dog_Id_seq.nextval, #{dogCateCode}, #{dogName}, #{dogPrice}, #{dogPoint}, #{dogContent})
+		insert into dog(dogId, dogCateCode, dogName, dogPrice, dogPoint, dogContent, fileMain, fileSub1, fileSub2, fileSub3)
+		values(dog_Id_seq.nextval, #{dogCateCode}, #{dogName}, #{dogPrice}, #{dogPoint}, #{dogContent}, #{fileMain}, #{fileSub1}, #{fileSub2}, #{fileSub3})
 	
 	</insert>
 	
@@ -78,7 +78,7 @@
 		
 		update dog set dogName = #{dogName}, dogCateCode = #{dogCateCode}, 
 		dogPrice = #{dogPrice}, dogPoint = #{dogPoint}, dogContent = #{dogContent}, updateDate = sysdate
-		where dogId = ${dogId}
+		where dogId = ${dogId}d
 		
 	</update>
 	
@@ -90,12 +90,6 @@
 	
 	</delete>
 	
-	
-	<!-- 강아지 이미지 등록 -->
-	<insert id="dogImageEnroll">
-   	 	insert into dogImage(dogId, fileMain, fileSub1, fileSub2, fileSub3, uploadPath, uuid, uuid1, uuid2, uuid3)
-    	values (#{dogId}, #{fileMain}, #{fileSub1}, #{fileSub2}, #{fileSub3}, #{uploadPath}, #{uuid}, #{uuid1}, #{uuid2}, #{uuid3})
-	</insert>
 	
 
   </mapper>
