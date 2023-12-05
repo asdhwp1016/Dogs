@@ -17,6 +17,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"> </script>
 </head>
 <body>
+	<%@ include file="../includes/mainhf/header.jsp" %>
 	<div class="revWrap">
 		<div class="wrap">
 		<form action="/reserve/reserveEnroll" method="post" id="enrollForm">
@@ -49,7 +50,7 @@
 			<button class="cancelBtn">예약취소</button>
 		</div>
 	</div>
-
+<%@ include file="../includes/mainhf/footer.jsp" %>
 	<script>
 		let enrollForm = $("#enrollForm")
 		
@@ -93,10 +94,6 @@
 			}
 			
 		});	
-
-		/* const config = {
-				
-		}; */
 
 		$(document).ready(function() {
 		    $("input[name='reserveDate']").datetimepicker({

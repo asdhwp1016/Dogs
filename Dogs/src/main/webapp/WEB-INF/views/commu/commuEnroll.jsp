@@ -94,10 +94,6 @@
 						<div class="form_section_content">
 							<input type="file" id="fileItem" name="uploadFile" style="height:30px;" multiple="multiple">
 							<div id="uploadResult">
-								<!-- <div id="result_card">
-									<div class="imgDeleteBtn">x</div>
-									<img src="/commu/commuDisplay?fileName=test.png">
-								</div> -->
 							</div>
 						</div>
 					</div>

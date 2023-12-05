@@ -133,6 +133,23 @@
 			}
 
 		});
+		
+		$(".top_btn").on("click", function(e) {
+			e.preventDefault();
+		    $.ajax({
+		        url: '/commu/commuEnroll', // 로그인 확인을 위한 서버 경로
+		        type: 'GET',
+		        success: function(response) {
+		            if (response.userId == null) {
+		                alert("로그인 후 이용해주세요!");
+		                return;
+		            } 
+		        },
+		        error: function() {
+		            alert("서버 오류 발생");
+		        }
+		    });
+		});
 
 		let moveForm = $("#moveForm");
 
