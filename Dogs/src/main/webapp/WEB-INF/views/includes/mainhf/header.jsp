@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="resources/css/mainhf/header.css?v=1">
+<link rel="stylesheet" href="../resources/css/mainhf/header.css?v=1">
 
 <script src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -20,7 +20,7 @@
 	<div class="header">
 		<!-- 로고 영역 -->
 		<div class="logo_area">
-			<a href="#"><img src="resources/img/doglogo.png"></a>
+			<a href="#"><img src="../resources/img/doglogo.png"></a>
 		</div>
 		
 		<div class="top_gnb_area">

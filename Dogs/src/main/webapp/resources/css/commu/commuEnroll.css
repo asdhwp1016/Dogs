@@ -10,6 +10,10 @@ a {
     color: inherit;
 }
 
+#formEnroll {
+	margin-top: 140px;
+}
+
 .board_wrap {
     width: 1440px;
     margin: 20px auto;

@@ -86,6 +86,7 @@
 			
 		
 			if(nameCk && dateCk){
+				alert("예약이 등록되었습니다!")
 				enrollForm.submit();
 			} else {
 				return false;

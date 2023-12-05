@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="../resources/css/commu/commuList.css?after">
 </head>
 <body>
+<%@ include file="../includes/mainhf/header.jsp" %>
 	<div class="wrap">
 	<div class="table_wrap">
 		<div class="commTop">
@@ -104,6 +105,7 @@
 		</form>
 	</div>
 	</div>
+	<%@ include file="../includes/mainhf/footer.jsp" %>
 	<script>
 		$(document).ready(function() {
 			let result = '<c:out value="${result}"/>';

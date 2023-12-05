@@ -36,13 +36,12 @@ public class ReserveController {
 	
 	/* 예약하기 */
 	@PostMapping("/reserveEnroll")
-	public String reserveEnrollPOST(ReserveVO rvo, RedirectAttributes rttr) {
+	public String reserveEnrollPOST(ReserveVO rvo) {
 		log.info("예약......" + rvo);
 		
 		rService.enroll(rvo);
-		rttr.addFlashAttribute("rev_result", rvo.getReserveId());
 		
-		return "redirect:/reserve/reserveCheck";
+		return "redirect:/main";
 	}
 	
 	/* 예약하기 페이지 이동 */
@@ -63,7 +62,7 @@ public class ReserveController {
 		
 		log.info("핸드폰 인증 전송");
 		
-		int randomNumber = (int)((Math.random()* (9999 - 1000 + 1)) + 1000);//난수 생성
+		int randomNumber = (int)((Math.random()* (999999 - 100000 + 1)) + 100000);//난수 생성
 		rService.certifiedPhoneNumber(userPhoneNumber,randomNumber);
 		
 		return Integer.toString(randomNumber);

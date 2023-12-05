@@ -6,8 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet"
-	href="../resources/css/commu/commuEnroll.css?after">
+<link rel="stylesheet" href="../resources/css/commu/commuEnroll.css?after">
 <script src="https://code.jquery.com/jquery-3.4.1.js"
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous"></script>
@@ -51,6 +50,7 @@
 </style>
 </head>
 <body>
+	<%@ include file="../includes/mainhf/header.jsp" %>
 	<form id="formEnroll" action="/commu/commuEnroll" method="post">
 		<div class="board_wrap">
 			<div class="board_title">
@@ -109,6 +109,7 @@
 		<a class="btn on" id="enroll_btn">등록</a> 
 		<a class="btn"id="cancel_btn">취소</a>
 	</div>
+	<%@ include file="../includes/mainhf/footer.jsp" %>
 	<script>
 		let enrollForm = $("#formEnroll");
 
