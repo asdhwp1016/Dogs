@@ -20,7 +20,7 @@
 	<div class="header">
 		<!-- 로고 영역 -->
 		<div class="logo_area">
-			<a href="#"><img src="../resources/img/doglogo.png"></a>
+			<a href="/main"><img src="../resources/img/doglogo.png"></a>
 		</div>
 		
 		<div class="top_gnb_area">
@@ -69,7 +69,7 @@
 					</div>
 				</li>
 				<li>
-					<a href="#">신규분양</a>
+					<a href="/DogSell/dogSellList">신규분양</a>
 					<div class="subMenu">
 						<ul>
                             <li><a href="#">강아지 분양</a></li>
@@ -88,13 +88,13 @@
 					</div>
 				</li>
 				<li>
-					<a href="#">방문예약</a>
+					<a href="/reserve/reserveEnroll">방문예약</a>
 				</li>
 				<li>
 					<a href="#">분양후기</a>
 				</li>
 				<li>
-					<a href="#">커뮤니티</a>
+					<a href="/commu/commuList	">커뮤니티</a>
 				</li>
 			</ul>
 		</div>
