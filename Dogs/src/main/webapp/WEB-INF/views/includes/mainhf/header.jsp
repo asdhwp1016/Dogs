@@ -91,7 +91,7 @@
 					<a href="/reserve/reserveEnroll">방문예약</a>
 				</li>
 				<li>
-					<a href="#">분양후기</a>
+					<a href="/review/review_list">분양후기</a>
 				</li>
 				<li>
 					<a href="/commu/commuList	">커뮤니티</a>

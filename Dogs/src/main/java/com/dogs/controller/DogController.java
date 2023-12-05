@@ -71,5 +71,14 @@ public class DogController {
 		}
 		
 	
+
+	//메인 페이지 이동
+		@RequestMapping(value = "/review/review_list", method = RequestMethod.GET)
+		public void review_listPageGET() {
+			
+			logger.info("리뷰 페이지 진입");
+			
+		}
+
 	
 }
