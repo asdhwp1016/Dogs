@@ -84,7 +84,8 @@
 	pointer-events: none;
 	user-select: none;
 	color: white;
-	bottom: 0;
+	left: 23px;
+	bottom: 113px;
 	opacity: 0.0;
 	transition: opacity .4s ease-in-out;
 	-moz-transition: opacity .4s ease-in-out;
@@ -133,7 +134,7 @@
 
 #review .review .menu .search {
 	margin-top: 50px;
-	margin-bottom: 70px;
+	margin-bottom: 60px;
 	text-align: center;
 }
 

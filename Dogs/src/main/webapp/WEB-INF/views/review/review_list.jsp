@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>분양후기</title>
 <link rel="stylesheet" href="../resources/css/review/review_list.css">
 </head>
 <script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -16,35 +16,25 @@
 
 <section id="review">
 	<div class="review">
-	
+		
 		<div class="list" id="list">
-			<div class="page_text">Total -건 - 페이지</div>
-				<c:set var="i" value="1"/>
-				<c:set var="j" value="48"/>
-				
-				<c:forEach begin="${i}" end="${j}" step="1" varStatus="status">
+			<div class="page_text">Total -건 -페이지</div>
+			
+				<c:forEach items="${review}" var="r" varStatus="status">
 					<div class="content">
-						<img src="../resources/img/pic.jpg" class="image"/>
+						<img src="../resources/img/review_img/${r.review_img}" class="image"/>
 						<div class="cover"></div>
 						<div id="text" class="text">
-							test text
-							test text
-							test text
-							test text
-							test text
-							test text
-							test text
-							test text
-							test text
-							test text
-							test text
+							<h4><span>${r.dog_type}</span> 분양 후기입니다</h4>
 						</div>
 					</div>
 				</c:forEach>
+				
 		</div>	<!-- .list 종료 -->
 	
 		<div class="clear"></div>
 	
+		<!-- 하단 메뉴들 묶음 -->
 		<div class="menu">
 			<!-- 더보기 버튼 -->
 			<div class="more">
@@ -68,35 +58,37 @@
 	</div>	
 </section>
 
-
 <%@ include file="../includes/mainhf/footer.jsp" %>
 </body>
 
 <script>
-// https://joonopark92.tistory.com/49
-// https://m.blog.naver.com/deeperain/221459867105
-// https://jh-tr.tistory.com/57
+
+// 더보기 기능
 $(function() {
 	$(".content").slice(0, 16).show();	// 처음에 보여질 갯수
 	
 	$("#moreView").click(function(e) {	// 클릭 시 이벤트 발생
 		e.preventDefault();
 		$(".content:hidden").slice(0, 16).show();	// 더 보이게 할 갯수
-	
-		/* // 더 보여질 콘텐츠가 없다면, 
+		
+		 // 더 보여질 콘텐츠가 없다면, 
 		if($(".content:hidden").length == 0) {
-			alert("마지막 페이지입니다.");
-		} */
+			$(".more").hide();
+			// alert("마지막 페이지입니다.");
+		}
+		
 	});
 	
 });
 
+/*	클래스명으로 요소 아이디 알아내기
 function load() {
-	/* $("#con${i}").hide();
+	$("#con${i}").hide();
 	
 	var class_id = $('.content').attr('id');
-	window.alert(class_id); */
+	window.alert(class_id); 
 }
+*/
 </script>
 
 </html>
