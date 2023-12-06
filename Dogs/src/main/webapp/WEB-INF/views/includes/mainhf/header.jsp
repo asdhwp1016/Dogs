@@ -49,7 +49,7 @@
 						<a href="/user/logout.do">로그아웃</a>
 					</li>
 					<li>
-						<a href="#">마이페이지</a>
+						<a href="/mypage/myPageMain">마이페이지</a>
 					</li>
 				</ul>
 			</c:if>

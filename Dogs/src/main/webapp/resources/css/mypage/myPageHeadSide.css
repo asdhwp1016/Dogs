@@ -1,1 +1,136 @@
-@charset "EUC-KR";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@300&family=Noto+Sans+KR:wght@600&family=Roboto+Mono:wght@100&display=swap');
+@import url('spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
+#heart_product li a {
+   text-decoration: none;
+}
+
+#wrap {
+   width: 90%;
+   margin: 0 auto;
+   margin-left: 100px;
+}
+
+#wrap>#side_wrap {
+   width: 20%;
+   float: left;
+}
+
+#wrap #title {
+   text-align: left;
+   margin-top: 30px;
+   font-family: "Inter", "Noto Sans KR", sans-serif;
+}
+
+#side_wrap ul {
+   margin-top: 10px;
+   list-style: none;
+   padding-left: 0;
+}
+
+#side_wrap ul #side_span {
+   margin-bottom: 30px;
+}
+
+#side_wrap span {
+   font-weight: 700;
+   font-size: 1.2rem;
+}
+
+#side_wrap a {
+   text-decoration: none;
+   color: #999;
+   font-size: 0.8rem;
+}
+
+#side_wrap a:hover {
+   color: red;
+   text-decoration: underline;
+}
+
+#side_wrap a:active {
+   color: red;
+   text-decoration: underline;
+}
+
+#wrap #content {
+   width: 70%;
+   float: left;
+   align-items: center;
+   padding: 20px 0 20px 0;
+   margin-bottom: 55px;
+}
+
+#wrap #content #member_info {
+   margin-top: 10px;
+   height: 200px;
+   margin-bottom: 55px;
+   padding: 0 46px 0 46px;
+   border: 4px solid #d5d5d5;
+}
+
+#wrap #content #member_info #member_name {
+   width: 40%;
+   padding-left: 8%;
+   padding-top: 90px;
+   font-size: 22px;
+   letter-spacing: -1.1px;
+   font-family: "Inter", "Noto Sans KR", sans-serif;
+   float: left;
+}
+
+#wrap #content #member_info #member_name #member_lev {
+   font-weight: 700;
+}
+
+#wrap #content #member_info #member_goods {
+   float: left;
+   width: 40%;
+   border-left: 1px solid #d5d5d5;
+   padding-top: 28px;
+   padding-bottom: 10px;
+   margin-top: 32px;
+   padding-left: 70px;
+   color: #666;
+   font-size: 14px;
+   letter-spacing: -.7px;
+   vertical-align: top;
+}
+
+#wrap #content #member_info #member_goods #cart img {
+   display: inline-block;
+   width: 25px;
+   height: 28px;
+   margin-right: 4px;
+   vertical-align: -7px;
+}
+
+#wrap #content #member_info #member_goods a {
+   text-decoration: none;
+   display: inline-block;
+   color: #ee1c25;
+   font-family: "Inter", "Noto Sans KR", sans-serif;
+   font-size: 20px;
+   margin-left: 20px;
+}
+
+#wrap #content #member_info #member_goods #cart #bucket_count,
+   #heart_count {
+   color: black;
+   font-size: 15px;
+   font-weight: 400;
+   vertical-align: 1px;
+   text-align: right;
+}
+
+#wrap #content #member_info #member_goods #cart {
+   margin-bottom: 45px;
+}
+
+#wrap #content #member_info #member_goods #heart img {
+   display: inline-block;
+   width: 25px;
+   height: 28px;
+   margin-right: 4px;
+   vertical-align: -7px;
+}

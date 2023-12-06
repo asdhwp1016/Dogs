@@ -8,26 +8,42 @@ import org.springframework.util.FileCopyUtils; // 추가
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.dogs.service.AdminService;
 
 @Controller
 public class DogController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(DogController.class);
 	
+	@Autowired
+	private AdminService adminService;
 	
 	//메인 페이지 이동
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public void mainPageGET() {
+	public void mainPageGET(Model model) {
 		
 		logger.info("메인 페이지 진입");
 		
+		model.addAttribute("mainImage", adminService.dogsImageList());
+		
+	}
+	
+	//마이페이지 이동
+	@RequestMapping(value = "/mypage/myPageMain", method = RequestMethod.GET)
+	public void myPageMainGET() {
+			
+		logger.info("마이페이지 메인 화면 진입");
+			
 	}
 	
 	

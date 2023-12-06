@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -119,9 +120,9 @@ public class AdminController {
     
     
     /*강아지 상품 등록*/
-    @PostMapping("/dogsEnroll")
-    public String dogsEnrollPOST(DogVO dog, RedirectAttributes attr,
-            @RequestParam("fileMain") MultipartFile fileMain,
+    /*@PostMapping("/dogsEnroll")
+    public String dogsEnrollPOST(@ModelAttribute DogVO dog, RedirectAttributes attr,
+    		@RequestParam("fileMain") MultipartFile fileMain,
             @RequestParam("fileSub1") MultipartFile fileSub1,
             @RequestParam("fileSub2") MultipartFile fileSub2,
             @RequestParam("fileSub3") MultipartFile fileSub3) {
@@ -163,14 +164,14 @@ public class AdminController {
         attr.addFlashAttribute("enroll_result", dog.getDogName());
         return "redirect:/admin/dogsManage";
         
-        
-    }
+    }*/
     
     // 파일 저장 메서드
     private void saveFile(String uploadDir, String fileName, MultipartFile multipartFile) throws IOException {
         Path filePath = Paths.get(uploadDir, fileName);
         multipartFile.transferTo(filePath);
     }
+    
 
     
     

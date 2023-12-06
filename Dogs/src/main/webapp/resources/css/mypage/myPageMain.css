@@ -1,1 +1,107 @@
-@charset "EUC-KR";
+@charset "UTF-8";
+
+#wrap #content #order_wrap h2 {
+	padding-bottom: 16px;
+	border-bottom: 2px solid black;
+}
+
+#wrap #content #order_wrap #order_list_table {
+	margin-top: 16px;
+}
+
+#wrap #content #order_wrap #order_list_table table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+#wrap #content #order_wrap #order_list_table img {
+	height: 120px;
+	padding-top: 10px;
+	padding-left: 15%;
+	padding-bottom: 10px;
+}
+
+#wrap #content #order_wrap #order_list_table #order_list {
+	border-bottom: 1px solid #d5d5d5;
+	height: 48px;
+	padding: 0 20px;
+	background: #f0f0f0;
+}
+
+#wrap #content #order_wrap #order_list_table tr {
+	border-bottom: 1px solid #d5d5d5;
+}
+
+#wrap #content #order_wrap #order_list_table tr td {
+	text-align: center;
+}
+
+#heart_wrap h2 {
+	padding-bottom: 16px;
+	border-bottom: 2px solid black;
+}
+
+#heart_product li {
+	width: 240px;
+	float: left;
+}
+
+#zzim {
+	margin-left: 95px;
+	margin-top: 9px;
+}
+
+#zzim img {
+	width: 23px;
+	height: 23px;
+}
+
+#heart_item ul {
+	list-style: none;
+	padding-left: 20px;
+}
+
+#heart_img img {
+	width: 230px;
+	height: 230px;
+}
+
+#heart_info {
+	padding: 15px 10px 0;
+	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+#brand {
+	margin-top: 4px;
+	font-size: 15px;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	height: auto;
+	line-height: 1.2;
+	text-overflow: ellipsis;
+	font-weight: 600;
+	color: black;
+}
+
+#shoes_name {
+	color: #666;
+	margin-top: 8px;
+	font-size: 14px;
+}
+
+#price {
+	font-size: 19px;
+	font-weight: 600;
+	color: black;
+	float: left;
+}
+
+#heart_product li {
+	margin-top: 20px;
+}
+
+#info_bottom {
+	margin-top: 9px;
+}

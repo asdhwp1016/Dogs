@@ -88,6 +88,16 @@ public class AdminServiceImpl implements AdminService {
 		return adminMapper.dogsDelete(dogId);
 		
 	}
+	
+	
+	/*강아지 이미지 리스트*/
+	@Override
+	public List<DogVO> dogsImageList() {
+		
+		log.info("dogsImageList.......");
+		
+		return adminMapper.dogsImageList();
+	}
 
 	
 

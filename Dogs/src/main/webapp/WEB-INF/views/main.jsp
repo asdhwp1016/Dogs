@@ -42,9 +42,9 @@
 			
 			<div class="dogBoxes">
 				<ul>
-					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+					<c:forEach items="${mainImage}" var="mainImage" begin="1" end="4" step="1"> 
 						<li class="dogBox">
-							
+							<img src="resources/img/dog/${mainImage.fileMain}"/>
 						</li>
 					</c:forEach>
 				</ul>
@@ -52,9 +52,9 @@
 			
 			<div class="dogBoxes">
 				<ul>
-					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+					<c:forEach items="${mainImage}" var="mainImage" begin="21" end="24" step="1"> 
 						<li class="dogBox">
-							
+							<img src="resources/img/dog/${mainImage.fileMain}"/>
 						</li>
 					</c:forEach>
 				</ul>
@@ -62,9 +62,9 @@
 			
 			<div class="dogBoxes">
 				<ul>
-					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+					<c:forEach items="${mainImage}" var="mainImage" begin="41" end="44" step="1"> 
 						<li class="dogBox">
-							
+							<img src="resources/img/dog/${mainImage.fileMain}"/>
 						</li>
 					</c:forEach>
 				</ul>
@@ -72,9 +72,9 @@
 			
 			<div class="dogBoxes">
 				<ul>
-					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+					<c:forEach items="${mainImage}" var="mainImage" begin="48" end="51" step="1"> 
 						<li class="dogBox">
-							
+							<img src="resources/img/dog/${mainImage.fileMain}"/>
 						</li>
 					</c:forEach>
 				</ul>

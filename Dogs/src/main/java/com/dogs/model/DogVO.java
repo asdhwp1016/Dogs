@@ -40,16 +40,16 @@ public class DogVO {
 	private String dCateCode;
 	
 	/*메인 이미지*/
-    private MultipartFile fileMain;
+    private String fileMain;
 	
 	/*서브 이미지1*/
-	private MultipartFile fileSub1;
+	private String fileSub1;
 	
 	/*서브 이미지2*/
-	private MultipartFile fileSub2;
+	private String fileSub2;
 	
 	/*서브 이미지3*/
-	private MultipartFile fileSub3;
+	private String fileSub3;
 
 	public String getdCateName() {
 		return dCateName;

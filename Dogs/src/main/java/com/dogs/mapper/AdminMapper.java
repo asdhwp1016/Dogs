@@ -30,4 +30,7 @@ public interface AdminMapper {
 	/*강아지 상품 삭제*/
 	public int dogsDelete(int dogId);
 	
+	/*강아지 이미지 리스트*/
+	public List<DogVO> dogsImageList();
+	
 }
