@@ -44,8 +44,10 @@
 				<ul>
 					<c:forEach items="${mainImage}" var="mainImage" begin="1" end="4" step="1"> 
 						<li class="dogBox">
-							<img src="resources/img/dog/${mainImage.fileMain}"/>
-						</li>
+			                <a href="DogSell/dogSellList">
+			                    <img src="resources/img/dog/${mainImage.fileMain}"/>
+			                </a>
+			            </li>
 					</c:forEach>
 				</ul>
 			</div>
@@ -54,7 +56,9 @@
 				<ul>
 					<c:forEach items="${mainImage}" var="mainImage" begin="21" end="24" step="1"> 
 						<li class="dogBox">
-							<img src="resources/img/dog/${mainImage.fileMain}"/>
+							<a href="DogSell/dogSellList">
+			                    <img src="resources/img/dog/${mainImage.fileMain}"/>
+			                </a>
 						</li>
 					</c:forEach>
 				</ul>
@@ -64,7 +68,9 @@
 				<ul>
 					<c:forEach items="${mainImage}" var="mainImage" begin="41" end="44" step="1"> 
 						<li class="dogBox">
-							<img src="resources/img/dog/${mainImage.fileMain}"/>
+							<a href="DogSell/dogSellList">
+			                   <img src="resources/img/dog/${mainImage.fileMain}"/>
+			                </a>
 						</li>
 					</c:forEach>
 				</ul>
@@ -74,7 +80,9 @@
 				<ul>
 					<c:forEach items="${mainImage}" var="mainImage" begin="48" end="51" step="1"> 
 						<li class="dogBox">
-							<img src="resources/img/dog/${mainImage.fileMain}"/>
+							<a href="DogSell/dogSellList">
+			                    <img src="resources/img/dog/${mainImage.fileMain}" />
+			                </a>
 						</li>
 					</c:forEach>
 				</ul>
@@ -96,9 +104,11 @@
 			
 			<div class="dogReviewBoxes">
 				<ul>
-					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+					<c:forEach items="${review}" var="r" begin="1" end="4" step="1">
 						<li class="dogReviewBox">
-							
+							<a href="review/review_list">
+								<img src="resources/img/review_img/${r.review_img}" class="image"/>
+							</a>
 						</li>
 					</c:forEach>
 				</ul>
@@ -106,9 +116,11 @@
 			
 			<div class="dogReviewBoxes">
 				<ul>
-					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+					<c:forEach items="${review}" var="r" begin="6" end="9" step="1">
 						<li class="dogReviewBox">
-							
+							<a href="review/review_list">
+								<img src="resources/img/review_img/${r.review_img}" class="image"/>
+							</a>
 						</li>
 					</c:forEach>
 				</ul>
@@ -116,9 +128,11 @@
 			
 			<div class="dogReviewBoxes">
 				<ul>
-					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+					<c:forEach items="${review}" var="r" begin="15" end="18" step="1">
 						<li class="dogReviewBox">
-							
+							<a href="review/review_list">
+								<img src="resources/img/review_img/${r.review_img}" class="image"/>
+							</a>
 						</li>
 					</c:forEach>
 				</ul>
@@ -126,9 +140,11 @@
 			
 			<div class="dogReviewBoxes">
 				<ul>
-					<c:forEach var="i" begin="1" end="4"> <!-- 5개의 박스를 생성하도록 설정 -->
+					<c:forEach items="${review}" var="r" begin="21" end="24" step="1">
 						<li class="dogReviewBox">
-							
+							<a href="review/review_list">
+								<img src="resources/img/review_img/${r.review_img}" class="image"/>
+							</a>
 						</li>
 					</c:forEach>
 				</ul>

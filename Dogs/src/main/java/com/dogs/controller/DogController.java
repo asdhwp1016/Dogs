@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.dogs.service.AdminService;
+import com.dogs.service.ReviewService;
 
 @Controller
 public class DogController {
@@ -28,6 +29,9 @@ public class DogController {
 	@Autowired
 	private AdminService adminService;
 	
+	@Autowired
+	private ReviewService rService;
+	
 	//메인 페이지 이동
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public void mainPageGET(Model model) {
@@ -36,13 +40,48 @@ public class DogController {
 		
 		model.addAttribute("mainImage", adminService.dogsImageList());
 		
+		model.addAttribute("review", rService.reviewList());
+		
 	}
 	
-	//마이페이지 이동
+	//마이페이지 메인 화면 이동
 	@RequestMapping(value = "/mypage/myPageMain", method = RequestMethod.GET)
 	public void myPageMainGET() {
 			
 		logger.info("마이페이지 메인 화면 진입");
+			
+	}
+	
+	//마이페이지 비번 변경 이동
+		@RequestMapping(value = "/mypage/myPagePwdUpdate", method = RequestMethod.GET)
+		public void myPagePwdUpdateGET() {
+				
+			logger.info("마이페이지 비밀번호 변경 화면 진입");
+				
+		}
+		
+		//마이페이지 사용자 정보 삭제 이동
+		@RequestMapping(value = "/mypage/myPageUserDelete", method = RequestMethod.GET)
+		public void myPageUserDeleteGET() {
+						
+			logger.info("마이페이지 사용자 정보 삭제 화면 진입");
+						
+		}
+		
+		//마이페이지 사용자 정보 변경 이동
+		@RequestMapping(value = "/mypage/myPageUserUpdate", method = RequestMethod.GET)
+		public void myPageUserUpdateGET() {
+								
+			logger.info("마이페이지 사용자 정보 변경 화면 진입");
+								
+		}
+	
+		
+		//오시는 길 이동
+	@RequestMapping(value = "/puppy/comePuppy", method = RequestMethod.GET)
+	public void comePuppyGET() {
+			
+		logger.info("오시는 길 화면 진입");
 			
 	}
 	
@@ -100,13 +139,14 @@ public class DogController {
 		
 	
 
-	//메인 페이지 이동
+	    //리뷰 페이지 이동
+		/*
 		@RequestMapping(value = "/review/review_list", method = RequestMethod.GET)
 		public void review_listPageGET() {
 			
 			logger.info("리뷰 페이지 진입");
 			
 		}
-
+		*/
 	
 }

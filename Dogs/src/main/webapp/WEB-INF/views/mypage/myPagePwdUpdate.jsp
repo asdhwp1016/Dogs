@@ -5,10 +5,9 @@
 <html>
 <head>
 <!-- <link href="css/myMain.css" rel="stylesheet"> -->
-<link href="user/mypage/css/myPwdUpdate.css" rel="stylesheet">
+<link rel="stylesheet" href="../resources/css/mypage/myPagePwdUpdate.css?v=1">
 <meta charset="UTF-8">
 <title>비밀번호변경</title>
-<script type="text/javascript" src="user/mypage/script/mypage.js"></script>
 </head>
 <body>
    <%@ include file="../includes/mainhf/header.jsp" %>

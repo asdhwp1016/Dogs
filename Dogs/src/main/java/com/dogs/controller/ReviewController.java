@@ -20,11 +20,13 @@ public class ReviewController {
 	private ReviewService rService;
 	
 	// 리뷰 상세 페이지 접속
+	
 	@GetMapping("/review_list")
 	public void reviewList(Model model) {
 		log.info("리뷰 상세 페이지 진입");
 		
 		model.addAttribute("review", rService.reviewList());
 	}
+	
 	
 }

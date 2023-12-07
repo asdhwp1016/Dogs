@@ -12,15 +12,15 @@
 <body>
 <div id="headSide">
 	<div id="title">
-		<h1>마이페이지</h1>
+		<h1><a href="/mypage/myPageMain">마이페이지</a></h1>
 	</div>
 	<div id="side_wrap">
 		<ul>
 			<li id="side_span"><span>개인정보</span>
 				<ul>
-					<li><a href="#">개인정보수정</a></li>
-					<li><a href="#">비밀번호변경</a></li>
-					<li><a href="#">회원탈퇴</a></li>
+					<li><a href="/mypage/myPageUserUpdate">개인정보수정</a></li>
+					<li><a href="/mypage/myPagePwdUpdate">비밀번호변경</a></li>
+					<li><a href="/mypage/myPageUserDelete">회원탈퇴</a></li>
 				</ul>
 				</li>
 				<li id="side_span"><span>방문예약</span>

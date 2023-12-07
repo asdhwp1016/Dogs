@@ -31,7 +31,7 @@
 				</div>
 				<div class="pw_wrap">
 					<div class="pw_input_box">
-						<input class="pw_iput" name="password" placeholder="비밀번호를 입력해주세요" onfocus="this.value=''">
+						<input type="password" class="pw_iput" name="password" placeholder="비밀번호를 입력해주세요" onfocus="this.value=''">
 					</div>
 				</div>
 				

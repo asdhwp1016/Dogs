@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>분양후기</title>
-<link rel="stylesheet" href="../resources/css/review/review_list.css">
+<link rel="stylesheet" href="../resources/css/review/review_list.css?v=1">
 </head>
 <script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -18,7 +18,7 @@
 	<div class="review">
 		
 		<div class="list" id="list">
-			<div class="page_text">Total -건 -페이지</div>
+			<div class="page_text"><h1>♥PUPPY의 새 가족이 되어주신 소중한 고객님들♥</h1></div>
 			
 				<c:forEach items="${review}" var="r" varStatus="status">
 					<div class="content">
@@ -43,17 +43,6 @@
 			
 			<hr size="1px" color="lightgray">
 			
-			<!-- 검색탭 -->
-			<div class="search">	
-				<select id="search_option">
-					<option id="title" value="title">제목</option>
-					<option id="type" value="type">품종</option>
-				</select>
-				
-				<input type="text" id="search_keyword" name="serach_keyword">
-				
-				<button id="search_btn">검색</button>
-			</div>
 		</div>	<!-- .menu 종료 -->
 	</div>	
 </section>

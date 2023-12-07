@@ -91,7 +91,7 @@
 	</delete>
 	
 	
-	<!-- 이미지 리스트 출력 -->
+	<!-- 강아지 상품 이미지 리스트 출력 -->
 	<select id="dogsImageList" resultType="com.dogs.model.DogVO">
 		
 		select * from dog

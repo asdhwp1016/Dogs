@@ -4,8 +4,7 @@
 <html>
 <head>
 <title>Insert title here</title>
-<link href="user/mypage/css/myMemberDelete.css" rel="stylesheet">
-<script type="text/javascript" src="user/mypage/script/mypage.js"></script>
+<link rel="stylesheet" href="../resources/css/mypage/myPageUserDelete.css?v=1">
 </head>
 <body>
 	<%@ include file="../includes/mainhf/header.jsp" %>

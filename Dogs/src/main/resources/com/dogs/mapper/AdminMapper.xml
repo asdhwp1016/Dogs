@@ -34,7 +34,7 @@
 		    select /*+INDEX_DESC(dog SYS_C007597)*/ rownum as rn, dogId, dogName,
 		        (select dCateName from dogCate where dog.dogCateCode = dogCate.dCateCode) dCateName, regDate
 		    from dog 
-		    where 
+		    where 3
 		]]>    
 		
 		    <if test="keyword != null">
@@ -91,7 +91,7 @@
 	</delete>
 	
 	
-	<!-- 이미지 리스트 출력 -->
+	<!-- 강아지 상품 이미지 리스트 출력 -->
 	<select id="dogsImageList" resultType="com.dogs.model.DogVO">
 		
 		select * from dog

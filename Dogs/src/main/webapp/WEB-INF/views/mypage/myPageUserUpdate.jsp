@@ -4,7 +4,7 @@
 <html>
 <head>
 <!-- <link href="css/myMain.css" rel="stylesheet"> -->
-<link href="user/mypage/css/myMemberUpdate.css" rel="stylesheet">
+<link rel="stylesheet" href="../resources/css/mypage/myPageUserUpdate.css?v=1">
 <meta charset="UTF-8">
 <title>개인정보수정</title>
 </head>

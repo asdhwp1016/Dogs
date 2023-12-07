@@ -6,12 +6,15 @@
 
 /* 화면 전체 렙 */
 .wrapper{
-	width: 1900px;	
+	width: 100%;
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
 }
 
 /* content 랩 */
-.wrap{
-	width : 800px;
+.wrap {
+	width: 800px;
 	margin: auto;
 }
 /* 페이지 제목 */
