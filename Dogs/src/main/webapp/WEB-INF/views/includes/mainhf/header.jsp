@@ -61,10 +61,10 @@
 					<a href="#">PUPPY</a>
 					<div class="subMenu">
 						<ul>
-                            <li><a href="#">소개</a></li>
+                            <li><a href="/puppy/intro">소개</a></li>
                             <li><a href="#">공지사항</a></li>
                             <li><a href="#">오시는 길</a></li>
-                            <li><a href="#">설문 테스트</a></li>
+                            <li><a href="https://smore.im/quiz/ZAHcvChG7z">설문 테스트</a></li>
                         </ul>
 					</div>
 				</li>
@@ -72,8 +72,8 @@
 					<a href="/DogSell/dogSellList">신규분양</a>
 					<div class="subMenu">
 						<ul>
-                            <li><a href="#">강아지 분양</a></li>
-                            <li><a href="#">영상보기</a></li>
+                            <li><a href="/DogSell/dogSellList">강아지 분양</a></li>
+                            <li><a href="/DogSell/dogVideo">영상보기</a></li>
                         </ul>
 					</div>
 				</li>

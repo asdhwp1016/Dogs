@@ -61,62 +61,49 @@
     
     <!-- Top Bar -->
     <div class="top-bar">
-        <a href="/DogSell/dogSellDetail">포메라니안</a>
+        <a href="#">포메라니안</a>
         <a href="#">비숑</a>
         <a href="#">불독</a>
         <a href="#">웰시코기</a>
         <a href="#">말티푸</a>
     </div>
-
-    <!-- Main Content -->
-    <div class="review">
-        <section id="review">
-            <div class="list">
-                <!-- Your existing content loop -->
-                <c:set var="i" value="1"/>
-                <c:set var="j" value="40"/>
-                <c:forEach begin="${i}" end="${j}" step="1" varStatus="loop">
-                    <div class="content"> 
-                        <c:choose>
-                            <c:when test="${loop.index == 1}">
-                              <img src="../resources/img/adbanner1.png" class="image"/></a>
-                            </c:when>
-                            <c:otherwise>
-                                <img src="http://cfile24.uf.tistory.com/image/19741B4B50194022057DF6" class="image"/>
-                            </c:otherwise>
-                        </c:choose>
-                        <div class="cover"></div>
-                        <span class="text">
-                            <c:if test="${loop.index == 1}">
-                                밍글<br>활발함<br>은근낯가림
-                            </c:if>
-                        </span>
-                    </div>
-                </c:forEach>
-                <!-- End of content loop -->
-
-                <!-- Load More Button -->
-                <div class="more">
-                    <button id="moreView">더보기 +</button>
-                </div>
-
-                <!-- Horizontal Rule -->
-                <hr size="1px" color="lightgray">
-
-                <!-- Search Tab -->
-                <div class="search">
-                    <select id="search_option">
-                        <option id="title" value="title">제목</option>
-                        <option id="type" value="type">품종</option>
-                    </select>
-
-                    <input type="text" id="search_keyword" name="search_keyword">
-
-                    <input type="submit" value="검색" id="search_btn">
-                </div>
-            </div>
-        </section>
+   <!-- Main Content -->
+<div class="review">
+    <section id="review">
+        <div class="list">
+            <!-- Your existing content loop -->
+            <c:set var="i" value="1"/>
+            <c:set var="j" value="40"/>
+           <c:forEach begin="${i}" end="${j}" step="1" varStatus="loop">
+    <a href="/DogSell/dogSellDetail">
+    <div class="content">
+        <c:choose>
+            <c:when test="${loop.index == 1}">
+                <!-- 첫 번째 이미지에 링크 추가 -->
+                    <img src="../resources/img/adbanner1.png" class="image"/>
+            </c:when>
+            <c:otherwise>
+                <a href="#"> <!-- 다른 이미지에 대한 링크 추가 (원하는 URL로 변경) -->
+                    <img src="http://cfile24.uf.tistory.com/image/19741B4B50194022057DF6" class="image"/>
+                </a>
+            </c:otherwise>
+        </c:choose>
+        <div class="cover"></div>
+        <span class="text">
+            <c:if test="${loop.index == 1}">
+                밍글<br>활발함<br>은근낯가림
+            </c:if>
+        </span>
     </div>
+    </a>
+    
+</c:forEach>
+                
+            </div>
+        </div>
+    </section>
+</div> 
+   
 
     <!-- Footer -->
     <%@ include file="../includes/mainhf/footer.jsp" %>

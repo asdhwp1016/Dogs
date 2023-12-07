@@ -5,8 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <title>상세 정보 페이지</title>
+    <link rel="stylesheet" href="../resources/css/DogSell/dogSellDetail.css?after">
+    <!-- Add any additional CSS or scripts here -->
     <style>
-    .detail-container {
+   .detail-container {
         max-width: 800px;
         margin: 160px auto 5px;
         padding: 20px;
@@ -27,7 +29,8 @@
         border: 1px solid #ddd;
         border-radius: 5px;
         object-fit: cover;
-        margin-bottom: 20px;
+        margin-top:60px;
+        margin-bottom: 70px;
         margin-right: -20px;
         margin-left: -20px;
     }
@@ -36,7 +39,17 @@
         height: calc(100% + 80px);
         border-radius: 5px;
         object-fit: cover;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
+        margin-right: -40px;
+        margin-left: -40px;
+    }
+    .findett-image {
+        width: calc(100% + 80px);
+        height: calc(100% + 80px);
+        border-radius: 5px;
+        object-fit: cover;
+        margin-top: 150px;
+        margin-bottom: 150px;
         margin-right: -40px;
         margin-left: -40px;
     }
@@ -56,11 +69,8 @@
         background-color: white;
         color: pink;
     }
-  
-</style>
-
-    <link rel="stylesheet" href="../resources/css/DogSell/dogSellDetail.css?after">
-    <!-- Add any additional CSS or scripts here -->
+   
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -68,15 +78,14 @@
 
     <!-- Detail Content -->
     <div class="detail-container">
-        <h2>강아지 상세 정보</h2>
 
         <div class="image-container">
             <img src="../resources/img/웰시코기_꼬까_sub1.jpg" class="detail-image"/>
-            <img src="../resources/img/퍼피상세정보왜.png" class="dett-image"/>
             <img src="../resources/img/웰시코기_꼬까_sub2.jpg" class="detail-image"/>
-            <img src="../resources/img/웰시코기_꼬까_sub3.jpg" class="detail-image"/>
-            <img src="../resources/img/퍼피상세정보약속서비스.png" class="dett-image"/>
-            
+            <img src="../resources/img/퍼피상세정보왜.png" class="dett-image"/>
+            <img src="../resources/img/카톡연중무휴.jpg" class="dett-image"/>
+            <img src="../resources/img/웰시코기_꼬까_sub3.jpg" class="detail-image"/>      
+            <img src="../resources/img/퍼피상세정보약속서비스.png" class="findett-image"/>
         </div>
 
        <!-- Back Button -->
