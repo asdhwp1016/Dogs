@@ -9,10 +9,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/css/mainhf/header.css?v=1">
 
-<script src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-
 </head>
 <body>
 
@@ -64,11 +60,8 @@
                             <li><a href="/puppy/intro">소개</a></li>
                             <li><a href="#">공지사항</a></li>
 
-                            <li><a href="#">오시는 길</a></li>
-                            <li><a href="https://smore.im/quiz/ZAHcvChG7z">설문 테스트</a></li>
-
                             <li><a href="/puppy/comePuppy">오시는 길</a></li>
-                            <li><a href="#">설문 테스트</a></li>
+                            <li><a href="https://smore.im/quiz/ZAHcvChG7z">설문 테스트</a></li>
 
                         </ul>
 					</div>
@@ -80,8 +73,6 @@
                             <li><a href="/DogSell/dogSellList">강아지 분양</a></li>
 
                             <li><a href="/DogSell/dogVideo">영상보기</a></li>
-
-                            <li><a href="#">영상보기</a></li>
 
                         </ul>
 					</div>

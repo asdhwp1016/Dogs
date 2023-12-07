@@ -100,5 +100,14 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	
+	/*강아지 상세 이미지 리스트*/
+	public List<DogVO> dogsImageListByCategory(String dogCateCode) {
+		
+		log.info("dogsImageListByCategory......." + dogCateCode);
+		
+	    return adminMapper.dogsImageListByCategory(dogCateCode);
+	    	
+	}
+	
 
 }

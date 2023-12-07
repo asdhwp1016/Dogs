@@ -33,5 +33,8 @@ public interface AdminService {
 	/*강아지 이미지 리스트*/
 	public List<DogVO> dogsImageList();
 	
+	/*강아지 상품 상세 이미지 리스트*/
+	public List<DogVO> dogsImageListByCategory(String dogCateCode);
+	
 	
 }

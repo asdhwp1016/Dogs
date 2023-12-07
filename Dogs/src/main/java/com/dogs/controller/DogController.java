@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dogs.service.AdminService;
 import com.dogs.service.ReviewService;
@@ -88,14 +89,27 @@ public class DogController {
 	
 	//신규분양 페이지 이동
 	   @RequestMapping(value = "/DogSell/dogSellList", method = RequestMethod.GET)
-	   public void dogSellListPageGET() {
+	   public void dogSellListPageGET(Model model) {
 	      logger.info("신규분양 페이지 진입");
+	      
+	      model.addAttribute("dogsImageList", adminService.dogsImageList());
 	   }
+	   
+		/*
+		 * //신규분양 페이지 이동
+		 * 
+		 * @RequestMapping(value = "/DogSell/dogSellList?type=C&dogCateCode=001", method
+		 * = RequestMethod.GET) public void dogSellListPageCate1GET(Model model, String
+		 * dogCateCode) { logger.info("신규분양 페이지 진입");
+		 * model.addAttribute("dogsImageListByCategory",
+		 * adminService.dogsImageListByCategory(dogCateCode)); }
+		 */
 	   
 	 //신규분양 상세 페이지 이동
 	   @RequestMapping(value = "/DogSell/dogSellDetail", method = RequestMethod.GET)
 	   public void dogSellDetailPageGET() {
-	      logger.info("신규분양 상세정보 페이지 진입");
+	      logger.info("신규분양 상세정보 페이지 진입"); 
+	      
 	   }
 	   
 	 //소개 페이지 이동

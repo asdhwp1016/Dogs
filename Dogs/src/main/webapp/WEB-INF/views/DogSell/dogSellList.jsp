@@ -53,6 +53,9 @@
             display: block;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+   crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header -->
@@ -61,46 +64,28 @@
     
     <!-- Top Bar -->
     <div class="top-bar">
-        <a href="#">포메라니안</a>
-        <a href="#">비숑</a>
-        <a href="#">불독</a>
-        <a href="#">웰시코기</a>
-        <a href="#">말티푸</a>
+        <a class="001" href="#">포메라니안</a>
+        <a class="002" href="#">비숑</a>
+        <a class="003" href="#">불독</a>
+        <a class="004" href="#">웰시코기</a>
+        <a class="005" href="#">말티푸</a>
     </div>
    <!-- Main Content -->
 <div class="review">
     <section id="review">
         <div class="list">
             <!-- Your existing content loop -->
-            <c:set var="i" value="1"/>
-            <c:set var="j" value="40"/>
-           <c:forEach begin="${i}" end="${j}" step="1" varStatus="loop">
-    <a href="/DogSell/dogSellDetail">
-    <div class="content">
-        <c:choose>
-            <c:when test="${loop.index == 1}">
-                <!-- 첫 번째 이미지에 링크 추가 -->
-                    <img src="../resources/img/adbanner1.png" class="image"/>
-            </c:when>
-            <c:otherwise>
-                <a href="#"> <!-- 다른 이미지에 대한 링크 추가 (원하는 URL로 변경) -->
-                    <img src="http://cfile24.uf.tistory.com/image/19741B4B50194022057DF6" class="image"/>
-                </a>
-            </c:otherwise>
-        </c:choose>
-        <div class="cover"></div>
-        <span class="text">
-            <c:if test="${loop.index == 1}">
-                밍글<br>활발함<br>은근낯가림
-            </c:if>
-        </span>
-    </div>
-    </a>
-    
-</c:forEach>
-                
-            </div>
-        </div>
+           	<c:forEach items="${dogsImageList}" var="dogsImageList"> 
+			    <a href="/DogSell/dogSellDetail">
+			    <div class="content">
+			            <img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>
+			        <div class="cover"></div>
+			        <span class="text">
+			        </span>
+			    </div>
+			    </a>
+			</c:forEach>
+            </div>   
     </section>
 </div> 
    
@@ -110,7 +95,97 @@
 </body>
 
 <script>
-    // Your additional JavaScript can go here
+
+$(".001").on("click", function(e) {
+		e.preventDefault();
+		let list = $(".list");
+		list.empty(); // 이전에 있던 내용을 지움
+   		let str = "";
+   		str += '<c:forEach items="${dogsImageList}" var="dogsImageList">';
+   		str += '<c:if test="${dogsImageList.dogCateCode == \'001\'}">';
+   		str += '<a href="/DogSell/dogSellDetail">';
+   		str += '<div class="content">';
+   		str += '<img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>';
+   		str += '</div>';
+   		str += '</a>';
+   		str += '</c:if>';
+   		str += '</c:forEach>';
+   		
+   		list.append(str);
+   });
+   
+$(".002").on("click", function(e) {
+	e.preventDefault();
+	let list = $(".list");
+	list.empty(); // 이전에 있던 내용을 지움
+		let str = "";
+		str += '<c:forEach items="${dogsImageList}" var="dogsImageList">';
+		str += '<c:if test="${dogsImageList.dogCateCode == \'002\'}">';
+		str += '<a href="/DogSell/dogSellDetail">';
+		str += '<div class="content">';
+		str += '<img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>';
+		str += '</div>';
+		str += '</a>';
+		str += '</c:if>';
+		str += '</c:forEach>';
+		
+		list.append(str);
+});
+
+$(".003").on("click", function(e) {
+	e.preventDefault();
+	let list = $(".list");
+	list.empty(); // 이전에 있던 내용을 지움
+		let str = "";
+		str += '<c:forEach items="${dogsImageList}" var="dogsImageList">';
+		str += '<c:if test="${dogsImageList.dogCateCode == \'003\'}">';
+		str += '<a href="/DogSell/dogSellDetail">';
+		str += '<div class="content">';
+		str += '<img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>';
+		str += '</div>';
+		str += '</a>';
+		str += '</c:if>';
+		str += '</c:forEach>';
+		
+		list.append(str);
+});
+
+$(".004").on("click", function(e) {
+	e.preventDefault();
+	let list = $(".list");
+	list.empty(); // 이전에 있던 내용을 지움
+		let str = "";
+		str += '<c:forEach items="${dogsImageList}" var="dogsImageList">';
+		str += '<c:if test="${dogsImageList.dogCateCode == \'004\'}">';
+		str += '<a href="/DogSell/dogSellDetail">';
+		str += '<div class="content">';
+		str += '<img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>';
+		str += '</div>';
+		str += '</a>';
+		str += '</c:if>';
+		str += '</c:forEach>';
+		
+		list.append(str);
+});
+
+$(".005").on("click", function(e) {
+	e.preventDefault();
+	let list = $(".list");
+	list.empty(); // 이전에 있던 내용을 지움
+		let str = "";
+		str += '<c:forEach items="${dogsImageList}" var="dogsImageList">';
+		str += '<c:if test="${dogsImageList.dogCateCode == \'005\'}">';
+		str += '<a href="/DogSell/dogSellDetail">';
+		str += '<div class="content">';
+		str += '<img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>';
+		str += '</div>';
+		str += '</a>';
+		str += '</c:if>';
+		str += '</c:forEach>';
+		
+		list.append(str);
+});
+
 </script>
 
 </html>

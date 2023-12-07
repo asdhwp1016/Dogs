@@ -21,24 +21,7 @@ public class AdminMapperTests {
 	
 	/*강아지 등록*/
 	
-	@Test
-	public void dogEnrollTest() throws Exception {
-		
-		DogVO dog = new DogVO();
-		
-		dog.setDogName("웅애애애애ㅐ");
-		dog.setDogCateCode("006");
-		dog.setDogPrice(400000);
-		dog.setDogPoint("귀여움");
-		dog.setDogContent("이거 왜 오류가 나는걸까");
-		
-		System.out.println("Before DogVO : " + dog);
-		
-		mapper.dogEnroll(dog);
-		
-		System.out.println("After DogVO : " + dog);
-		
-	}
+
 	
 	
 	
@@ -148,6 +131,13 @@ public class AdminMapperTests {
 	}
 	*/
 	
-	
+	@Test
+	public void dogImageEnrollTest() {
+
+		System.out.println(mapper.dogsImageListByCategory("002"));
+		
+		
+	}
+
 	
 }

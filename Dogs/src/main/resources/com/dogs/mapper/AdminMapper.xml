@@ -12,8 +12,8 @@
   		
   		</selectKey>  	
 	
-		insert into dog(dogId, dogCateCode, dogName, dogPrice, dogPoint, dogContent, fileMain, fileSub1, fileSub2, fileSub3)
-		values(dog_Id_seq.nextval, #{dogCateCode}, #{dogName}, #{dogPrice}, #{dogPoint}, #{dogContent}, #{fileMain}, #{fileSub1}, #{fileSub2}, #{fileSub3})
+		insert into dog(dogId, dogCateCode, dogName,dogPoint, dogContent, fileMain, fileSub1, fileSub2, fileSub3)
+		values(dog_Id_seq.nextval, #{dogCateCode}, #{dogName}, #{dogPoint}, #{dogContent}, #{fileMain}, #{fileSub1}, #{fileSub2}, #{fileSub3})
 	
 	</insert>
 	
@@ -97,6 +97,15 @@
 		select * from dog
 		
 	</select>
+	
+	
+	<!-- 강아지 상품 상세 리스트 이미지 출력 -->
+	<select id="dogsImageListByCategory" resultType="com.dogs.model.DogVO">
+	
+    	SELECT * FROM dog WHERE dogCateCode = #{dogCateCode}
+    	
+	</select>
+	
 	
 
   </mapper>

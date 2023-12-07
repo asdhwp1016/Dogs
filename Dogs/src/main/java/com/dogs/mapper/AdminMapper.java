@@ -22,7 +22,7 @@ public interface AdminMapper {
 	public int dogsGetTotal(Criteria cri);
 	
 	/*강아지 상품 조회 페이지*/
-	public DogVO dogsGetDetail(int dogId);
+	public DogVO dogsGetDetail(int dogId);	
 	
 	/*강아지 상품 수정*/
 	public int dogsModify(DogVO vo);
@@ -32,5 +32,8 @@ public interface AdminMapper {
 	
 	/*강아지 이미지 리스트*/
 	public List<DogVO> dogsImageList();
+	
+	/*강아지 상품 상세 이미지 리스트*/
+	public List<DogVO> dogsImageListByCategory(String dogCateCode);
 	
 }

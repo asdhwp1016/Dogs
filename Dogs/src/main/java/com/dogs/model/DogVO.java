@@ -18,9 +18,6 @@ public class DogVO {
 	/* 강쥐 이름 */
 	private String dogName;
 	
-	/* 강쥐 가격 */
-	private int dogPrice;
-	
 	/* 강쥐 특징 */
 	private String dogPoint;
 	
