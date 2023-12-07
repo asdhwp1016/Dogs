@@ -66,8 +66,7 @@ a {
 
 .board_view {
 	width: 100%;
-	border-top: 2px solid #000;
-	border-bottom: 1px solid #000;
+	border-top: 2px solid #d3d3d3;
 }
 
 .board_view .title {
@@ -152,6 +151,11 @@ a {
 	width: 1440px;
 }
 
+.form_section {
+	border-bottom: 1px solid #d3d3d3;
+	margin-bottom: 7px;
+}
+
 .del {
 	background-color: #F65650;
 	color: #fff;
@@ -160,4 +164,91 @@ a {
 .on {
 	background: #000;
 	color: #fff;
+}
+
+.replyTitle {
+	margin-top: 20px;
+	margin-bottom: 7px;
+	font-size: 1.2rem;
+}
+
+.reply {
+	border-bottom: 1px solid #333;
+}
+
+.replyWrap textarea {
+	border: 1px solid #333;
+	height: 100px;
+	width: 1440px;
+	overflow: auto;
+	resize: none;
+	font-size: 1.2rem;
+}
+
+.reviewBtn {
+	margin-bottom: 10px;
+	background-color: #000;
+	color: #FFF;
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 2px;
+	font-size: 1.4rem;
+	font-family: 'Nanum Gothic', sans-serif;
+	cursor: pointer;
+}
+
+.replyEnrollWrap {
+	margin-bottom: 20px;
+	margin-top: 10px;
+	text-align: right;
+}
+
+.replyEnroll {
+	background-color: #000;
+	color: #FFF;
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 2px;
+	font-size: 1.4rem;
+	font-family: 'Nanum Gothic', sans-serif;
+	cursor: pointer;
+}
+
+.replyContentWrap {
+	height: 90px;
+	width: 1400px !important;
+	margin-top: 10px;
+	border-bottom: 1px solid #d3d3d3;
+	padding: 5px 20px 5px 20px;
+}
+
+.replyUserId {
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.replyContent {
+	padding-left: 7px;
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.replyDate {
+	font-size: 1.1rem !important;
+	font-weight: 500 !important;
+	padding-left: 15px;
+}
+
+.replyDelete {
+	float: right;
+	padding: 5px;
+	border: 1px solid #DC3545;
+	border-radius: 2px;
+	background: #DC3545;
+	color: #fff;
+	height: 30px;
+	font-weight: 700;
+	font-family: 'Nanum Gothic', sans-serif;
+	cursor: pointer;
 }

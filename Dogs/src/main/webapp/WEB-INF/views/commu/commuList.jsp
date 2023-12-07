@@ -18,7 +18,18 @@
 	<div class="table_wrap">
 		<div class="commTop">
 			<div class="commTitle">커뮤니티 페이지</div>
-			<a href="/commu/commuEnroll" class="top_btn">게시판 등록</a>
+			<c:set var="user" value="${user}" />
+		        <c:if test="${not empty user.userId}">
+		        	<a href="/commu/commuEnroll" class="top_btn">
+		            게시판 등록
+		            </a>
+		        </c:if>
+		        <c:if test="${empty user.userId}">
+		             <a href="/commu/commuEnroll" class="top_btn disabled">
+		            	게시판 등록
+		            </a>
+		        </c:if>
+			</a>
 		</div>
 		<table class="commTable">
 			<thead>
@@ -134,24 +145,19 @@
 
 		});
 		
-		$(".top_btn").on("click", function(e) {
-			e.preventDefault();
-		    $.ajax({
-		        url: '/commu/commuEnroll', // 로그인 확인을 위한 서버 경로
-		        type: 'GET',
-		        success: function(response) {
-		            if (response.userId == null) {
-		                alert("로그인 후 이용해주세요!");
-		                return;
-		            } 
-		        },
-		        error: function() {
-		            alert("서버 오류 발생");
-		        }
+		 $(".disabled").on("click", function(e) {
+		        e.preventDefault(); 
+		        
+		        alert("로그인 후 이용해주세요!");
+		        
 		    });
-		});
 
 		let moveForm = $("#moveForm");
+		
+		$(".move").on("click",function(e) {
+			e.preventDefault();
+
+		});
 
 		$(".move").on("click",function(e) {
 			e.preventDefault();

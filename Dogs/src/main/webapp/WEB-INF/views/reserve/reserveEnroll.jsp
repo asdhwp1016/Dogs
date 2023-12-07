@@ -6,15 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/css/reserve/reserveEnroll.css?after">
-<!-- CSS CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"/> 
+<link rel="stylesheet" href="	https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.4.5/jquery.datetimepicker.css">
 <script src="https://code.jquery.com/jquery-3.4.1.js"
 	integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 	crossorigin="anonymous"></script>
-<!-- jQuery CDN -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
- <!-- datetimepicker jQuery CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.4.5/jquery.datetimepicker.js"></script>
 </head>
 <body>
 	<%@ include file="../includes/mainhf/header.jsp" %>
@@ -42,7 +38,7 @@
 				<input type="hidden" id="phoneDoubleChk"/>
 			<div class="lb">예약 날짜</div>
 			<div class="revDate">
-				<input name="reserveDate" placeholder="클릭하세요" autocomplete="off" readonly="readonly">
+				<input name="reserveDate" placeholder="클릭하세요" readonly="readonly">
 			</div>
 				<span class="ck_warn date_warn">날짜를 선택해 주세요.</span>
 		</form>	
@@ -95,15 +91,27 @@
 			
 		});	
 
-		$(document).ready(function() {
+		/* $(document).ready(function() {
 		    $("input[name='reserveDate']").datetimepicker({
-		    	lang:'kr',
-		    	format:"Y-m-d H:i",
-		    	allowTimes:[
-		    		  '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', 
-		    		  '12:00', '12:30', '14:00', '14:30', '15:00', '15:30',
-		    		  '16:00', '16:30', '17:00', '17:30', '18:00', '18:30'
-		    		 ]
+		        lang: 'kr',
+		        format: "Y-m-d H:i",
+		        allowTimes: [
+		            '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+		            '12:00', '12:30', '14:00', '14:30', '15:00', '15:30',
+		            '16:00', '16:30', '17:00', '17:30', '18:00', '18:30'
+		        ]
+		    });
+		}); */
+		
+		$(function(){
+		    $("input[name='reserveDate']").datetimepicker({
+		        lang:'ko',
+		        format:'Y-m-d H:i',
+		        allowTimes: [
+		            '09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
+		            '12:00', '12:30', '14:00', '14:30', '15:00', '15:30',
+		            '16:00', '16:30', '17:00', '17:30', '18:00', '18:30'
+		        ]
 		    });
 		});
 		

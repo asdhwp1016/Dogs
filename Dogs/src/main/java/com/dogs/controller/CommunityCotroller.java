@@ -35,6 +35,7 @@ import com.dogs.model.CommunityVO;
 import com.dogs.model.Criteria;
 import com.dogs.model.PageMakeDTO;
 import com.dogs.service.CommunityService;
+import com.dogs.service.ReplyService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import net.coobird.thumbnailator.Thumbnails;
@@ -48,6 +49,9 @@ public class CommunityCotroller {
 	
 	@Autowired
 	private ComAttachMapper cAttachMapper;
+	
+	@Autowired
+	private ReplyService replyService;
 
 	private static final Logger log = org.slf4j.LoggerFactory.getLogger(CommunityCotroller.class);
 
@@ -265,7 +269,7 @@ public class CommunityCotroller {
 	public void commuContentPageGET(int bno, Model model, Criteria cri) throws Exception {
 		model.addAttribute("pageInfo", cService.getPage(bno));
 		model.addAttribute("cri", cri);
-		
+		model.addAttribute("reply", replyService.getReplyList());
 	}
 
 	/* 커뮤니티 글 수정 페이지 이동 */
