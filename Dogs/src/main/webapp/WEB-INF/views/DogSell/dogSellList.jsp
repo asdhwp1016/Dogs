@@ -76,7 +76,7 @@
         <div class="list">
             <!-- Your existing content loop -->
            	<c:forEach items="${dogsImageList}" var="dogsImageList"> 
-			    <a href="/DogSell/dogSellDetail">
+			    <a href="/DogSell/dogSellDetail?dogId=${dogsImageList.dogId}">
 			    <div class="content">
 			            <img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>
 			        <div class="cover"></div>
@@ -103,7 +103,7 @@ $(".001").on("click", function(e) {
    		let str = "";
    		str += '<c:forEach items="${dogsImageList}" var="dogsImageList">';
    		str += '<c:if test="${dogsImageList.dogCateCode == \'001\'}">';
-   		str += '<a href="/DogSell/dogSellDetail">';
+   		str += '<a href="/DogSell/dogSellDetail?dogId=${dogsImageList.dogId}">';
    		str += '<div class="content">';
    		str += '<img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>';
    		str += '</div>';
@@ -121,7 +121,7 @@ $(".002").on("click", function(e) {
 		let str = "";
 		str += '<c:forEach items="${dogsImageList}" var="dogsImageList">';
 		str += '<c:if test="${dogsImageList.dogCateCode == \'002\'}">';
-		str += '<a href="/DogSell/dogSellDetail">';
+		str += '<a href="/DogSell/dogSellDetail?dogId=${dogsImageList.dogId}">';
 		str += '<div class="content">';
 		str += '<img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>';
 		str += '</div>';
@@ -139,7 +139,7 @@ $(".003").on("click", function(e) {
 		let str = "";
 		str += '<c:forEach items="${dogsImageList}" var="dogsImageList">';
 		str += '<c:if test="${dogsImageList.dogCateCode == \'003\'}">';
-		str += '<a href="/DogSell/dogSellDetail">';
+		str += '<a href="/DogSell/dogSellDetail?dogId=${dogsImageList.dogId}">';
 		str += '<div class="content">';
 		str += '<img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>';
 		str += '</div>';
@@ -157,7 +157,7 @@ $(".004").on("click", function(e) {
 		let str = "";
 		str += '<c:forEach items="${dogsImageList}" var="dogsImageList">';
 		str += '<c:if test="${dogsImageList.dogCateCode == \'004\'}">';
-		str += '<a href="/DogSell/dogSellDetail">';
+		str += '<a href="/DogSell/dogSellDetail?dogId=${dogsImageList.dogId}">';
 		str += '<div class="content">';
 		str += '<img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>';
 		str += '</div>';
@@ -175,7 +175,7 @@ $(".005").on("click", function(e) {
 		let str = "";
 		str += '<c:forEach items="${dogsImageList}" var="dogsImageList">';
 		str += '<c:if test="${dogsImageList.dogCateCode == \'005\'}">';
-		str += '<a href="/DogSell/dogSellDetail">';
+		str += '<a href="/DogSell/dogSellDetail?dogId=${dogsImageList.dogId}">';
 		str += '<div class="content">';
 		str += '<img src="../resources/img/dog/${dogsImageList.fileMain}" class="image"/>';
 		str += '</div>';

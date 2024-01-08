@@ -48,7 +48,7 @@
 
 </div>
 
-
+<%@ include file="../includes/mainhf/footer.jsp" %>
 
 <script>
 

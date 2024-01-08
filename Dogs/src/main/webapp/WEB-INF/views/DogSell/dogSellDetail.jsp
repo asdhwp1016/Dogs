@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,19 +80,22 @@
 
     <!-- Detail Content -->
     <div class="detail-container">
-
         <div class="image-container">
-            <img src="../resources/img/웰시코기_꼬까_sub1.jpg" class="detail-image"/>
-            <img src="../resources/img/웰시코기_꼬까_sub2.jpg" class="detail-image"/>
-            <img src="../resources/img/퍼피상세정보왜.png" class="dett-image"/>
-            <img src="../resources/img/카톡연중무휴.jpg" class="dett-image"/>
-            <img src="../resources/img/웰시코기_꼬까_sub3.jpg" class="detail-image"/>      
-            <img src="../resources/img/퍼피상세정보약속서비스.png" class="findett-image"/>
+        	<c:forEach items="${dogsImageList}" var="dogImage">
+                <!-- dogId가 현재 강아지의 ID와 일치하는 경우에만 이미지를 출력 -->
+                <c:if test="${dogImage.dogId eq param.dogId}">
+                    <img src="../resources/img/dog/${dogImage.fileSub1}" class="detail-image"/>
+                    <img src="../resources/img/dog/${dogImage.fileSub2}" class="detail-image"/>
+                    <img src="../resources/img/퍼피상세정보왜.png" class="dett-image"/>
+                    <img src="../resources/img/카톡연중무휴.jpg" class="dett-image"/>
+                    <img src="../resources/img/dog/${dogImage.fileSub3}" class="detail-image"/>      
+                    <img src="../resources/img/퍼피상세정보약속서비스.png" class="findett-image"/>
+                </c:if>
+            </c:forEach>
         </div>
 
        <!-- Back Button -->
-<button class=back-button onclick="location.href='/DogSell/dogSellList'" style="cursor: pointer;">목록으로</button>
-       
+		<button class=back-button onclick="location.href='/DogSell/dogSellList'" style="cursor: pointer;">목록으로</button> 
     </div>
 
     <!-- Footer -->

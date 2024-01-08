@@ -71,7 +71,7 @@
 						<dl>
 							<dt>글쓴이</dt>
 							<dd>
-								<input name="writer" type="text" value="${user.userName}" />
+								<input name="writer" type="text" value="${user.userId}" />
 							</dd>
 						</dl>
 						<dl>

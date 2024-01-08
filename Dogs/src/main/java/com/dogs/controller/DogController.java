@@ -107,9 +107,10 @@ public class DogController {
 	   
 	 //신규분양 상세 페이지 이동
 	   @RequestMapping(value = "/DogSell/dogSellDetail", method = RequestMethod.GET)
-	   public void dogSellDetailPageGET() {
+	   public void dogSellDetailPageGET(Model model) {
 	      logger.info("신규분양 상세정보 페이지 진입"); 
 	      
+	      model.addAttribute("dogsImageList", adminService.dogsImageList());
 	   }
 	   
 	 //소개 페이지 이동
